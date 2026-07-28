@@ -1,0 +1,27 @@
+{
+  "name": "Breen Genesis #0",
+  "description": "The very first NFT from the Breen Genesis Collection built on Base. A futuristic collectible representing the beginning of my Web3 development journey.",
+  "image": "genesis.png",
+  "attributes": [
+    {
+      "trait_type": "Collection",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "1"
+    },
+    {
+      "trait_type": "Creator",
+      "value": "Breen"
+    },
+    {
+      "trait_type": "Blockchain",
+      "value": "Base Sepolia"
+    }
+  ]
+}
