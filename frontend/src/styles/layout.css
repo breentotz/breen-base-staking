@@ -1,0 +1,38 @@
+/* ==========================
+   Breen Layout Foundation
+========================== */
+
+.page-layout {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.page-layout-wide {
+  width: 100%;
+}
+
+.page-layout-medium {
+  max-width: 1200px;
+}
+
+.page-layout-small {
+  max-width: 900px;
+}
+
+@media (max-width: 768px) {
+  .page-layout {
+    padding: 16px;
+  }
+}
+/* Breen Web3 shared page layout */
+
+.page-layout {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}

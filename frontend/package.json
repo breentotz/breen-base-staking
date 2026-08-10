@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "ethers": "^6.17.0",
+    "ox": "^1.6.2",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "recharts": "^3.10.1",
+    "viem": "^2.55.11"
   },
   "devDependencies": {
     "@types/react": "^19.2.17",
