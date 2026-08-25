@@ -23,5 +23,7 @@ A simple staking smart contract built on Base Sepolia using Hardhat and OpenZepp
 
 ## Run locally
 
-```bash id=
 ```
+## BREEN Builder Proof
+
+BREEN Builder Proof links verified GitHub contributions to a builder's connected wallet. Eligible merged pull requests can strengthen Open Source Reputation and provide verifiable evidence of real builder activity.
