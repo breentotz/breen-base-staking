@@ -18,3 +18,8 @@ If you are developing a production application, we recommend using TypeScript wi
 ### Verified Builder XP
 
 Verified merged GitHub contributions can be used as proof of real open-source Builder activity.
+## Verified Builder Contributions
+
+BREEN Web3 is testing verified GitHub contribution proofs as part of its Builder Reputation system.
+
+Merged pull requests can be linked to a verified builder identity and recorded as open-source reputation.
