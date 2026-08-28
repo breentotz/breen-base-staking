@@ -790,10 +790,13 @@ Hold at least 500,000 BREEN.`;
     </span>
 
     <h2>
-      {wallet
-        ? "Welcome back, Breen"
-        : "Welcome to Breen AI"}
-    </h2>
+  {wallet
+    ? wallet.toLowerCase() ===
+      "0x06d71eed44d152d88e6769afbb7cb3bbba2471d0"
+      ? "Welcome back, Breen"
+      : "Welcome back, Builder"
+    : "Welcome to Breen AI"}
+</h2>
 
    <p>
   {wallet

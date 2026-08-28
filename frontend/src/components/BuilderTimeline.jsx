@@ -1,6 +1,10 @@
-import { timelineData } from "../data/timelineData";
+import { getBuilderActivities } from "../services/builderEngine";
 
 function BuilderTimeline({ wallet }) {
+    const timelineEvents =
+    wallet
+      ? getBuilderActivities(wallet)
+      : [];
   return (
     <div className="builder-timeline-page">
 
@@ -25,25 +29,57 @@ function BuilderTimeline({ wallet }) {
 </p>
 
 <div className="timeline-list">
-  {timelineData.map((event) => (
-    <div key={event.id} className="timeline-item">
 
-      <div className="timeline-icon">
-        {event.icon}
+  {timelineEvents.length > 0 ? (
+    timelineEvents.map((event) => (
+      <div key={event.id} className="timeline-item">
+
+        <div className="timeline-icon">
+          {event.icon || "📜"}
+        </div>
+
+        <div className="timeline-content">
+
+          <small>
+            {event.date || ""}
+          </small>
+
+          <h4>
+            {event.title}
+          </h4>
+
+          <p>
+            {event.description ||
+              event.message ||
+              "Breen Web3 activity completed."}
+          </p>
+
+        </div>
+
+      </div>
+    ))
+  ) : (
+
+    <div className="timeline-empty-state">
+      <div className="timeline-empty-icon">
+        📜
       </div>
 
-      <div className="timeline-content">
+      <h4>
+        {wallet
+          ? "No Builder history yet"
+          : "Connect Wallet to View Timeline"}
+      </h4>
 
-        <small>{event.date}</small>
-
-        <h4>{event.title}</h4>
-
-        <p>{event.description}</p>
-
-      </div>
-
+      <p>
+        {wallet
+          ? "Your Builder milestones and onchain activity will appear here."
+          : "Your Builder history will appear here after connecting your wallet."}
+      </p>
     </div>
-  ))}
+
+  )}
+
 </div>
 
         {wallet && (

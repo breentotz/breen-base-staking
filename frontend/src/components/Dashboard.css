@@ -1,0 +1,2068 @@
+/* =========================================
+   BREEN WEB3 — DASHBOARD DENSITY V1
+   Desktop 100% layout
+========================================= */
+
+.dashboard {
+  width: 100%;
+}
+
+
+/* PAGE TITLE */
+
+.dashboard .dashboard-title {
+  margin-bottom: 18px;
+}
+
+.dashboard .dashboard-title h2 {
+  margin-bottom: 4px;
+}
+
+.dashboard .dashboard-title p {
+  margin-top: 0;
+}
+
+
+/* MAIN BUILDER HERO */
+
+.dashboard .dashboard-hero {
+  padding: 22px 24px 24px;
+  margin-bottom: 22px;
+}
+
+
+/* Welcome heading */
+
+.dashboard .dashboard-hero-heading {
+  margin-bottom: 18px;
+}
+
+.dashboard .dashboard-hero-icon {
+  width: 42px;
+  height: 42px;
+}
+
+
+/* TOP SUMMARY */
+
+.dashboard .dashboard-summary {
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.dashboard .dashboard-summary .summary-card {
+  min-height: 96px;
+
+  padding: 16px 18px;
+
+  border-radius: 13px;
+}
+
+.dashboard .dashboard-summary .summary-card h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  font-size: 25px;
+}
+
+.dashboard .dashboard-summary .summary-card small {
+  margin-top: 3px;
+}
+
+
+/* BUILDER ANALYTICS */
+
+.dashboard .builder-analytics {
+  margin-top: 0;
+}
+
+.dashboard .builder-analytics h3 {
+  margin-bottom: 12px;
+}
+
+.dashboard .analytics-grid {
+  gap: 12px;
+}
+
+.dashboard .analytics-card {
+  min-height: 104px;
+
+  padding: 17px 18px;
+
+  border-radius: 13px;
+}
+
+.dashboard .analytics-icon {
+  width: 46px;
+  height: 46px;
+}
+
+.dashboard .analytics-content h2 {
+  font-size: 20px;
+}
+
+
+/* PROGRESS */
+
+.dashboard .builder-progress {
+  min-height: auto !important;
+
+  margin: 20px 0 !important;
+  padding: 18px 20px !important;
+}
+
+
+/* FEATURE CARDS */
+
+.dashboard .dashboard-feature-grid {
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.dashboard .latest-event-card,
+.dashboard .dashboard-coach {
+  padding: 18px;
+}
+
+
+/* STREAK */
+
+.dashboard .streak-summary-card {
+  padding: 18px 20px;
+}
+
+
+/* WALLET STATS */
+
+.dashboard .premium-stats-grid {
+  gap: 12px;
+}
+
+.dashboard .premium-stat-card {
+  padding: 18px;
+}
+
+
+/* QUICK ACTIONS */
+
+.dashboard .quick-actions {
+  margin-top: 20px;
+  padding: 18px;
+
+  gap: 14px;
+}
+
+.dashboard .quick-actions-grid {
+  gap: 12px;
+}
+
+
+/* STAKING SUMMARY */
+
+.dashboard .premium-staking-summary {
+  padding: 18px 20px;
+}
+/* =========================================
+   DASHBOARD — WELCOME + SUMMARY V2
+========================================= */
+
+/* Make the welcome area feel lighter */
+.dashboard .dashboard-hero {
+  padding: 20px 22px 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 64, 175, 0.13),
+      rgba(15, 23, 42, 0.66)
+    );
+
+  border-color:
+    rgba(96, 165, 250, 0.13);
+
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Compact heading */
+
+.dashboard .dashboard-hero-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+.dashboard .dashboard-hero-icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+}
+
+.dashboard .dashboard-hero-heading h1 {
+  margin: 0;
+
+  font-size: 27px;
+  line-height: 1.1;
+}
+
+.dashboard .dashboard-hero-heading p {
+  margin: 3px 0 0;
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+
+/* Four compact builder cards */
+
+.dashboard .dashboard-summary {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.dashboard
+.dashboard-summary
+.summary-card {
+  min-height: 88px;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(10, 18, 35, 0.48);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.13);
+
+  box-shadow: none;
+}
+
+.dashboard
+.dashboard-summary
+.summary-card:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(96, 165, 250, 0.28);
+
+  background:
+    rgba(16, 28, 52, 0.68);
+}
+
+
+/* Labels */
+
+.dashboard .summary-card-label {
+  gap: 7px;
+
+  font-size: 13px;
+}
+
+.dashboard .summary-card-label svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* Main values */
+
+.dashboard
+.dashboard-summary
+.summary-card h2 {
+  margin: 9px 0 0;
+
+  font-size: 24px;
+  line-height: 1;
+}
+
+.dashboard
+.dashboard-summary
+.summary-card small {
+  margin-top: 5px;
+
+  font-size: 10px;
+}
+
+
+/* Keep cards responsive */
+
+@media (max-width: 1050px) {
+  .dashboard .dashboard-summary {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard .dashboard-hero {
+    padding: 17px;
+  }
+
+  .dashboard .dashboard-hero-heading h1 {
+    font-size: 23px;
+  }
+}
+/* =========================================
+   DASHBOARD — BUILDER ANALYTICS V2
+========================================= */
+
+.dashboard .analytics-section {
+  margin-top: 18px;
+}
+
+.dashboard .analytics-section h2 {
+  margin-bottom: 12px;
+
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+
+/* Analytics grid */
+.dashboard .analytics-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+/* Analytics cards */
+.dashboard .analytics-card {
+  min-height: 92px;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(10, 18, 35, 0.48);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.13);
+
+  box-shadow: none;
+}
+
+
+/* Smaller icon container */
+.dashboard .analytics-card-icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 11px;
+}
+
+.dashboard .analytics-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Analytics text */
+.dashboard .analytics-card h3 {
+  margin: 3px 0 0;
+
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.dashboard .analytics-card p {
+  margin: 0;
+
+  font-size: 11px;
+}
+
+
+/* Hover */
+.dashboard .analytics-card:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(96, 165, 250, 0.28);
+}
+
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .dashboard .analytics-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   DASHBOARD — ANALYTICS INTERNAL DENSITY
+========================================= */
+
+.dashboard .analytics-card {
+  align-items: center;
+}
+
+.dashboard .analytics-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 11px;
+}
+
+.dashboard .analytics-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard .analytics-content {
+  gap: 2px;
+}
+
+.dashboard .analytics-content span,
+.dashboard .analytics-content p {
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.dashboard .analytics-content h2,
+.dashboard .analytics-content h3 {
+  margin: 3px 0 0;
+
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+/* Smaller detail/expand button */
+
+.dashboard .analytics-hover-indicator {
+  top: 10px;
+  right: 10px;
+
+  width: 26px;
+  height: 26px;
+}
+
+/* Slightly tighter analytics section */
+
+.dashboard .builder-analytics {
+  margin-bottom: 18px;
+}
+/* =========================================
+   DASHBOARD — BUILDER PROGRESS V2
+========================================= */
+
+.dashboard .builder-progress {
+  margin: 16px 0 18px !important;
+  padding: 16px 18px !important;
+
+  border-radius: 14px;
+}
+
+
+/* Header row */
+
+.dashboard .builder-progress h3 {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+
+/* Level badge */
+
+.dashboard .builder-progress .level-badge {
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+}
+
+
+/* Progress bar */
+
+.dashboard .builder-progress-bar,
+.dashboard .progress-bar {
+  height: 9px;
+
+  margin-top: 14px;
+
+  border-radius: 999px;
+}
+
+
+/* XP labels */
+
+.dashboard .builder-progress-labels {
+  margin-top: 9px;
+
+  font-size: 11px;
+}
+
+
+/* If BuilderProgress uses plain small tags */
+
+.dashboard .builder-progress small {
+  font-size: 11px;
+}
+/* =========================================
+   DASHBOARD — FEATURE CARDS V2
+========================================= */
+
+.dashboard .dashboard-feature-grid {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.dashboard .latest-event-card,
+.dashboard .dashboard-coach {
+  min-height: 150px;
+
+  padding: 16px 18px;
+
+  border-radius: 14px;
+}
+
+
+/* Header label */
+
+.dashboard .dashboard-feature-label {
+  margin-bottom: 10px;
+
+  gap: 8px;
+
+  font-size: 12px;
+}
+
+.dashboard .dashboard-feature-icon {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 9px;
+}
+
+.dashboard .dashboard-feature-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* Main title */
+
+.dashboard .latest-event-card h3,
+.dashboard .dashboard-coach h3 {
+  margin: 8px 0 6px;
+
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+
+/* Description */
+
+.dashboard .latest-event-card p,
+.dashboard .dashboard-coach p {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* Date / reward */
+
+.dashboard .latest-event-card small {
+  font-size: 11px;
+}
+
+.dashboard .dashboard-coach strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 12px;
+}
+/* =========================================
+   DASHBOARD — BUILDER STREAK V2
+========================================= */
+
+.dashboard .streak-summary-card {
+  padding: 16px 18px;
+
+  border-radius: 14px;
+}
+
+
+/* Heading */
+
+.dashboard .streak-card-heading {
+  margin-bottom: 8px;
+
+  font-size: 13px;
+}
+
+
+/* Main day count */
+
+.dashboard .streak-summary-card h2 {
+  margin: 5px 0 4px;
+
+  font-size: 28px;
+  line-height: 1;
+}
+
+
+/* Status */
+
+.dashboard .streak-summary-card > strong {
+  font-size: 15px;
+}
+
+
+/* Longest streak */
+
+.dashboard .streak-summary-card > small {
+  margin-top: 5px;
+
+  font-size: 10px;
+}
+
+
+/* Message */
+
+.dashboard .streak-message {
+  margin: 12px 0;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* Milestone */
+
+.dashboard .streak-milestone {
+  margin-top: 10px;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+}
+
+.dashboard .streak-milestone-label {
+  font-size: 11px;
+}
+
+.dashboard .streak-milestone strong {
+  font-size: 13px;
+}
+
+.dashboard .streak-milestone small {
+  font-size: 10px;
+}
+
+
+/* Weekly activity */
+
+.dashboard .streak-summary-card > p {
+  margin: 12px 0 7px;
+
+  font-size: 12px;
+}
+
+.dashboard .streak-week-inline {
+  gap: 7px;
+}
+
+.dashboard .streak-inline-day {
+  width: 26px;
+  height: 26px;
+
+  border-radius: 8px;
+}
+/* =========================================
+   BUILDER STREAK — COMPACT DASHBOARD LAYOUT
+   ========================================= */
+
+.streak-summary-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+
+  padding: 20px;
+  min-height: 0;
+  height: auto;
+
+  align-items: start;
+}
+
+/* LEFT */
+
+.streak-main {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.streak-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.streak-current {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.streak-status {
+  font-size: 14px;
+}
+
+.streak-longest {
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+
+/* RIGHT / MILESTONE */
+
+.streak-center {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.streak-milestone {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.streak-milestone-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.streak-message {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+
+/* WEEKLY ACTIVITY */
+
+.streak-week {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 12px 14px;
+  margin-top: 2px;
+
+  border: 1px solid rgba(100, 150, 255, 0.16);
+  border-radius: 12px;
+}
+
+.streak-week-title {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.streak-week-inline {
+  display: flex;
+  gap: 7px;
+}
+
+.streak-inline-day {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .streak-summary-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .streak-week {
+    grid-column: 1;
+    flex-wrap: wrap;
+  }
+}
+/* =========================================
+   BUILDER STREAK — COMPACT V4
+========================================= */
+
+.dashboard .streak-summary-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 0.9fr);
+
+  gap: 18px 36px;
+
+  padding: 18px 20px;
+
+  min-height: 0;
+}
+
+
+/* LEFT */
+
+.dashboard .streak-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dashboard .streak-current {
+  margin-top: 4px;
+
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dashboard .streak-status {
+  font-size: 14px;
+}
+
+.dashboard .streak-longest {
+  margin-top: 4px;
+
+  font-size: 10px;
+}
+
+
+/* RIGHT */
+
+.dashboard .streak-center {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard .streak-milestone {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+}
+
+.dashboard .streak-message {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* WEEKLY ACTIVITY */
+
+.dashboard .streak-week {
+  grid-column: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 2px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+}
+
+.dashboard .streak-week-title {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.dashboard .streak-week-inline {
+  display: flex;
+  gap: 6px;
+}
+
+.dashboard .streak-inline-day {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .dashboard .streak-summary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard .streak-week {
+    grid-column: 1;
+    flex-wrap: wrap;
+  }
+}
+/* =========================================
+   DASHBOARD — QUICK ACTIONS COMPACT V2
+========================================= */
+
+.dashboard .quick-actions {
+  margin-top: 18px;
+  padding: 16px 18px;
+
+  border-radius: 14px;
+}
+
+
+/* Section title */
+
+.dashboard .quick-actions > h3 {
+  margin: 0 0 14px;
+
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+
+/* Four cards */
+
+.dashboard .quick-actions-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+/* Individual action */
+
+.dashboard .quick-action-card {
+  min-height: 118px;
+
+  padding: 14px 15px;
+
+  border-radius: 12px;
+}
+
+
+/* Icon */
+
+.dashboard .quick-action-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+
+  border-radius: 11px;
+}
+
+.dashboard .quick-action-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Text */
+
+.dashboard .quick-action-card strong {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.dashboard .quick-action-card small {
+  margin-top: 5px;
+
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+
+/* Arrow */
+
+.dashboard .quick-action-arrow {
+  margin-top: 10px;
+
+  font-size: 15px;
+}
+
+
+/* Premium hover stays subtle */
+
+.dashboard .premium-quick-action:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .dashboard .quick-actions-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard .quick-action-card {
+    min-height: 100px;
+  }
+}
+/* =========================================
+   DASHBOARD — STAKING SUMMARY COMPACT V2
+========================================= */
+
+.dashboard .premium-staking-summary {
+  min-height: 82px;
+
+  padding: 14px 18px;
+
+  border-radius: 14px;
+}
+
+
+/* Left content */
+
+.dashboard .staking-summary-content {
+  gap: 16px;
+}
+
+.dashboard .staking-summary-heading {
+  gap: 10px;
+}
+
+
+/* Icon */
+
+.dashboard .staking-summary-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+}
+
+.dashboard .staking-summary-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* Label + value */
+
+.dashboard .staking-summary-heading span {
+  margin-bottom: 3px;
+
+  font-size: 10px;
+}
+
+.dashboard .staking-summary-heading h3 {
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+
+/* Vault status */
+
+.dashboard .staking-summary-status {
+  padding: 6px 9px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+}
+
+
+/* Action button */
+
+.dashboard .staking-summary-action {
+  padding: 9px 12px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .dashboard .premium-staking-summary {
+    align-items: stretch;
+  }
+
+  .dashboard .staking-summary-content {
+    gap: 12px;
+  }
+
+  .dashboard .staking-summary-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* =========================================
+   BUILDER ANALYTICS — BALANCED GRID V3
+========================================= */
+
+.dashboard .analytics-grid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  align-items: stretch;
+}
+
+
+/* All analytics cards same visual height */
+
+.dashboard .analytics-card {
+  min-height: 132px;
+
+  height: 100%;
+
+  padding: 16px 18px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+
+/* Text area fills remaining space */
+
+.dashboard .analytics-content {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* Details become compact */
+
+.dashboard .analytics-details.visible {
+  margin-top: 10px;
+  padding-top: 9px;
+
+  border-top:
+    1px solid rgba(148, 163, 184, 0.12);
+}
+
+
+/* Builder XP details */
+
+.dashboard
+.analytics-details.visible
+p {
+  margin: 2px 0;
+
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.dashboard
+.analytics-details.visible
+small {
+  font-size: 10px;
+}
+
+
+/* NFT detail boxes */
+
+.dashboard .analytics-detail-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 6px;
+}
+
+.dashboard .analytics-detail-item {
+  min-height: 54px;
+
+  padding: 8px;
+
+  border-radius: 9px;
+}
+
+.dashboard .analytics-detail-item span {
+  font-size: 9px;
+  line-height: 1.15;
+}
+
+.dashboard .analytics-detail-item strong {
+  margin-top: 5px;
+
+  font-size: 13px;
+}
+
+
+/* Elite Builder progress */
+
+.dashboard .analytics-progress {
+  height: 5px;
+
+  margin-top: 8px;
+
+  border-radius: 999px;
+}
+
+.dashboard .analytics-subtitle {
+  margin-top: 3px;
+
+  font-size: 10px;
+}
+
+
+/* Desktop second row:
+   make Recent Actions + Elite Builder balanced */
+
+@media (min-width: 1101px) {
+
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(5) {
+    grid-column: 2 / 3;
+  }
+}
+
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .dashboard .analytics-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .dashboard .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   DASHBOARD — BUILDER PROGRESS FIX
+========================================= */
+
+.dashboard .builder-progress {
+  width: 100%;
+
+  display: block;
+
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+
+  margin: 18px 0 !important;
+  padding: 16px 18px !important;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+.dashboard .builder-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 14px;
+}
+
+.dashboard .builder-progress-header h3 {
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.dashboard .builder-progress-header > span {
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  color: #9fc2ff;
+
+  background: rgba(37, 99, 235, 0.1);
+
+  border: 1px solid rgba(96, 165, 250, 0.2);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* PROGRESS TRACK */
+
+.dashboard .builder-progress .progress-bar {
+  width: 100%;
+  height: 8px;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(148, 163, 184, 0.12);
+}
+
+
+/* PROGRESS VALUE */
+
+.dashboard .builder-progress .progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #8b5cf6
+    );
+}
+
+
+/* FOOTER */
+
+.dashboard .builder-progress-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 9px;
+
+  color: #8ea3c4;
+
+  font-size: 11px;
+}
+/* =========================================
+   DASHBOARD — STREAK WIDTH + SPACING
+========================================= */
+
+.dashboard .streak-summary-card {
+  width: 100%;
+  max-width: none;
+
+  margin-bottom: 24px;
+}
+
+
+/* Wallet stats need breathing room below streak */
+
+.dashboard .premium-stats-grid {
+  margin-top: 22px;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .dashboard .streak-summary-card {
+    width: 100%;
+    max-width: none;
+  }
+}
+/* =========================================
+   DASHBOARD — CLEAN ANALYTICS GRID
+========================================= */
+
+@media (min-width: 1101px) {
+
+  .dashboard .analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  /* First row — 3 equal cards */
+
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(1),
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(2),
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  /* Second row — 2 equal wide cards */
+
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(4),
+  .dashboard
+  .analytics-grid
+  .analytics-card:nth-child(5) {
+    grid-column: span 3;
+  }
+}
+/* =========================================
+   DASHBOARD — COMPACT BUILDER STREAK
+========================================= */
+
+.dashboard .streak-summary-card {
+  width: 100%;
+  max-width: none;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "main center"
+    "week week";
+
+  column-gap: 40px;
+  row-gap: 16px;
+
+  padding: 20px !important;
+  margin: 18px 0 22px !important;
+
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+
+/* LEFT */
+
+.dashboard .streak-main {
+  grid-area: main;
+}
+
+.dashboard .streak-card-heading {
+  margin-bottom: 14px;
+}
+
+.dashboard .streak-current {
+  margin-bottom: 5px;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.dashboard .streak-status {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.dashboard .streak-longest {
+  display: block;
+}
+
+
+/* RIGHT */
+
+.dashboard .streak-center {
+  grid-area: center;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.dashboard .streak-milestone {
+  margin: 0;
+}
+
+.dashboard .streak-message {
+  margin: 4px 0 0;
+}
+
+
+/* WEEKLY ACTIVITY — FULL WIDTH BOTTOM ROW */
+
+.dashboard .streak-week {
+  grid-area: week;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.dashboard .streak-week-title {
+  flex-shrink: 0;
+}
+
+.dashboard .streak-week-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0;
+}
+
+
+/* MOBILE / TABLET */
+
+@media (max-width: 900px) {
+
+  .dashboard .streak-summary-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "center"
+      "week";
+
+    gap: 18px;
+  }
+
+}
+/* =========================================
+   BUILDER STREAK — FINAL COMPACT LAYOUT
+========================================= */
+
+.dashboard .streak-summary-card {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-areas:
+    "main center"
+    "week center";
+
+  column-gap: 42px;
+  row-gap: 14px;
+
+  width: 100%;
+
+  padding: 20px 24px !important;
+
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+
+/* LEFT TOP */
+
+.dashboard .streak-main {
+  grid-area: main;
+}
+
+
+/* RIGHT SIDE */
+
+.dashboard .streak-center {
+  grid-area: center;
+
+  align-self: start;
+}
+
+
+/* LEFT BOTTOM */
+
+.dashboard .streak-week {
+  grid-area: week;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border-top: none !important;
+
+  align-self: end;
+}
+
+
+.dashboard .streak-week-inline {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 0 !important;
+}
+
+
+.dashboard .streak-week-title {
+  flex-shrink: 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .dashboard .streak-summary-card {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "main"
+      "center"
+      "week";
+
+    gap: 18px;
+  }
+
+}
+/* =========================================
+   DASHBOARD — EVENT + ADVICE FINAL POLISH
+========================================= */
+
+.dashboard .dashboard-feature-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+
+/* MATCHED CARDS */
+
+.dashboard .latest-event-card,
+.dashboard .dashboard-coach {
+  min-height: 132px;
+
+  padding: 17px 18px;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* LABEL */
+
+.dashboard .dashboard-feature-label {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 11px;
+
+  color: #9db8ff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* ICON */
+
+.dashboard .dashboard-feature-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  color: #78a8ff;
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.14);
+}
+
+
+/* MAIN TITLE */
+
+.dashboard .latest-event-card h3,
+.dashboard .dashboard-coach h3 {
+  margin: 0 0 7px;
+
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+
+/* DESCRIPTION */
+
+.dashboard .latest-event-card p,
+.dashboard .dashboard-coach p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* DATE */
+
+.dashboard .latest-event-card small {
+  margin-top: auto;
+  padding-top: 12px;
+
+  font-size: 10px;
+
+  color: #8294b4;
+}
+
+
+/* REWARD */
+
+.dashboard .dashboard-coach strong {
+  margin-top: auto;
+  padding-top: 12px;
+
+  font-size: 12px;
+
+  color: #ffd84d;
+}
+
+
+/* SUBTLE HOVER */
+
+.dashboard .latest-event-card,
+.dashboard .dashboard-coach {
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.dashboard .latest-event-card:hover,
+.dashboard .dashboard-coach:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(96, 165, 250, 0.28);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .dashboard .dashboard-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   DASHBOARD — BUILDER JOURNEY XP
+========================================= */
+
+.dashboard .journey-xp-progress {
+  margin-top: 16px;
+}
+
+.dashboard .journey-xp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 8px;
+
+  font-size: 11px;
+}
+
+.dashboard .journey-xp-header span {
+  color: #8ea3c4;
+}
+
+.dashboard .journey-xp-header strong {
+  color: #c8d8f5;
+  font-size: 11px;
+}
+
+.dashboard .journey-xp-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(148, 163, 184, 0.12);
+}
+
+.dashboard .journey-xp-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #8b5cf6
+    );
+
+  transition: width 0.35s ease;
+}
+/* =========================================
+   DASHBOARD — WALLET SNAPSHOT
+========================================= */
+
+.dashboard .wallet-snapshot {
+  margin-top: 18px;
+  padding: 17px 20px;
+
+  border-radius: 14px;
+
+  background: rgba(10, 18, 35, 0.58);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.14);
+}
+
+.dashboard .wallet-snapshot-header {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #9db8ff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashboard .wallet-snapshot-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+.dashboard .wallet-snapshot-item {
+  min-width: 0;
+
+  padding: 4px 18px;
+
+  border-right:
+    1px solid rgba(148, 163, 184, 0.12);
+}
+
+.dashboard .wallet-snapshot-item:first-child {
+  padding-left: 0;
+}
+
+.dashboard .wallet-snapshot-item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.dashboard .wallet-snapshot-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #8294b4;
+
+  font-size: 11px;
+}
+
+.dashboard .wallet-snapshot-item strong {
+  display: block;
+
+  color: #f8fafc;
+
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.dashboard .wallet-snapshot-item small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #60a5fa;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+@media (max-width: 800px) {
+
+  .dashboard .wallet-snapshot-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 16px 0;
+  }
+
+  .dashboard .wallet-snapshot-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .dashboard .wallet-snapshot-item:nth-child(3) {
+    padding-left: 0;
+  }
+}
+
+
+@media (max-width: 520px) {
+
+  .dashboard .wallet-snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard .wallet-snapshot-item {
+    padding: 10px 0;
+
+    border-right: 0;
+    border-bottom:
+      1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .dashboard .wallet-snapshot-item:last-child {
+    border-bottom: 0;
+  }
+}
+/* =========================================
+   DASHBOARD — COMPLETED STREAK MILESTONE
+========================================= */
+
+.dashboard .completed-streak-milestone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 18px;
+  padding: 13px 15px;
+
+  border:
+    1px solid rgba(34, 197, 94, 0.2);
+
+  border-radius: 11px;
+
+  background:
+    rgba(34, 197, 94, 0.055);
+}
+
+.dashboard .completed-milestone-label {
+  margin-bottom: 8px;
+
+  color: #4ade80;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dashboard .completed-milestone-title {
+  color: #f8fafc;
+
+  font-size: 13px;
+}
+
+.dashboard .completed-milestone-detail {
+  margin-top: 5px;
+
+  color: #8ea3c4;
+
+  font-size: 10px;
+}
+
+.dashboard .completed-milestone-reward {
+  margin-top: 7px;
+
+  color: #facc15;
+
+  font-size: 10px;
+  font-weight: 700;
+}

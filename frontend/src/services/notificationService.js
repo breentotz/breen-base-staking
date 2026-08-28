@@ -11,7 +11,7 @@ export function subscribe(listener) {
 export function showNotification(message, type = "info") {
   listeners.forEach((listener) => {
     listener({
-      id: Date.now(),
+      id: `${Date.now()}-${Math.random()}`,
       message,
       type,
     });

@@ -1,14 +1,34 @@
-import { formatTokenAmount } from "../utils/format";
+import {
+  getVerifiedBuilderLevel,
+  getVerifiedBuilderTier,
+  getNextLevelRequirementStatus,
+} from "../services/builderEngine";
 
-function BuilderProgress({
-  level,
-  xp,
-  nextLevelXP,
-}) {
-  const progress = Math.min(
-    (xp / nextLevelXP) * 100,
-    100
-  );
+function BuilderProgress({ wallet }) {
+  const verifiedLevel =
+    getVerifiedBuilderLevel(wallet);
+
+  const verifiedTier =
+    getVerifiedBuilderTier(wallet);
+
+  const nextLevelData =
+    getNextLevelRequirementStatus(wallet);
+
+  const status = nextLevelData?.status;
+
+  const completed =
+    status?.completedRequirements ?? 0;
+
+  const total =
+    status?.totalRequirements ?? 0;
+
+  const progress =
+    total > 0
+      ? Math.min(
+          (completed / total) * 100,
+          100
+        )
+      : 100;
 
   return (
     <div className="builder-progress">
@@ -17,25 +37,30 @@ function BuilderProgress({
         <h3>📈 Builder Progress</h3>
 
         <span>
-          Level {level}
+          Level {verifiedLevel}
         </span>
       </div>
 
       <div className="progress-bar">
-
         <div
           className="progress-fill"
           style={{
             width: `${progress}%`,
           }}
         />
-
       </div>
 
       <div className="builder-progress-footer">
 
-        <span>{formatTokenAmount(xp)} XP</span>
-<span>{formatTokenAmount(nextLevelXP)} XP</span>
+        <span>
+          {status
+            ? `${completed} / ${total} requirements`
+            : "Current level complete"}
+        </span>
+
+        <span>
+          {verifiedTier}
+        </span>
 
       </div>
 

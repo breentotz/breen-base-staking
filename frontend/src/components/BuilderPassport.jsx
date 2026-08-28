@@ -1,4 +1,11 @@
-import { getBuilderSummary } from "../services/builderEngine";
+import "../styles/BuilderPassport.css";
+
+import {
+  getBuilderSummary,
+  getVerifiedBuilderLevel,
+  getVerifiedBuilderTier,
+  getNextLevelRequirementStatus,
+} from "../services/builderEngine";
 
 function BuilderPassport({
   wallet,
@@ -7,130 +14,148 @@ function BuilderPassport({
 }) {
 
 
-  const summary = getBuilderSummary();
+  const summary = getBuilderSummary(wallet);
+
+const verifiedLevel =
+  getVerifiedBuilderLevel(wallet);
+
+const verifiedTier =
+  getVerifiedBuilderTier(wallet);
+
+const nextLevelData =
+  getNextLevelRequirementStatus(wallet);
+
+const nextRequirementStatus =
+  nextLevelData?.status;
+
+const verifiedProgress =
+  nextRequirementStatus
+    ? Math.round(
+        (
+          nextRequirementStatus.completedRequirements /
+          nextRequirementStatus.totalRequirements
+        ) * 100
+      )
+    : 0;  
 
   return (
-    <div className="builder-passport-page">
-      <div className="passport-header">
-        <h2>👤 Builder Passport</h2>
+  <div className="builder-passport-page">
 
-        <p className="passport-tagline">
-          Build your reputation. Not just your portfolio.
-        </p>
+    <div className="passport-compact-card">
+
+      <div className="passport-compact-topbar">
+        <span className="passport-brand">
+          BREEN BUILDER PASSPORT
+        </span>
+
+        <span className="passport-status">
+          VERIFIED
+        </span>
       </div>
 
-      <div className="builder-passport-card">
-        <p className="passport-subtitle">
-          Your verified identity as a builder on Base.
-        </p>
 
-        <div className="passport-hero">
-          <div className="passport-avatar">
-            🏆
+      <div className="passport-compact-main">
+
+        <div className="passport-compact-identity">
+
+          <div className="passport-compact-avatar">
+            BN
           </div>
 
-          <h1>{summary.name}</h1>
+          <div>
+            <h2>{summary.name}</h2>
 
-          <div className="passport-tier-badge">
-            👑 {summary.tier}
+            {wallet && (
+              <p>
+                {wallet.slice(0, 6)}
+                ...
+                {wallet.slice(-4)}
+              </p>
+            )}
           </div>
 
-          <h2>
-            ⭐ Level {summary.level}
-          </h2>
-          <div className="passport-level-progress">
-  <div
-    className="passport-level-progress-fill"
-    style={{
-      width: `${summary.levelProgress.progress}%`,
-    }}
-  />
-</div>
-
-<small>
-  {summary.xp} / {summary.levelProgress.nextLevelXP} XP
-</small>
-
-        <div className="passport-stats-grid">
-
-          <div className="passport-stat">
-            <span>🛡 Builder Score</span>
-
-            <strong>{summary.builderScore} / 100</strong>
-          </div>
-
-          <div className="passport-stat">
-            <span>🌐 Network</span>
-
-           <strong>{summary.network}</strong>
-          </div>
-
-          <div className="passport-stat">
-            <span>📅 Builder Since</span>
-
-            <strong>{summary.builderSince}</strong>
-          </div>
-
-          </div>
-
-          <div className="passport-journey">
-            <span>🎯 Current Journey</span>
-
-            <h3>
-              {summary.currentJourney}
-            </h3>
-
-            <p>
-              Complete your Builder Passport and prepare
-              for your first Base Mainnet milestone.
-            </p>
-          </div>
-
-          <div className="passport-recommendation">
-            <span>🤖 Builder Recommendation</span>
-
-            <h3>
-              {summary.recommendation}
-            </h3>
-
-            <p>
-              Continue your Builder Journey by deploying
-              your first smart contract on Base Mainnet.
-            </p>
-
-            <strong>
-             Reward: +{summary.recommendationReward} Lifetime XP
-            </strong>
-          </div>
-
-          <p>
-            Building publicly. Learning continuously.
-            Growing on Base.
-          </p>
-
-          <div className="passport-stat">
-             <span>🔥 Builder Streak</span>
-
-         <strong>
-               {summary.streak.current} Days
-         </strong>
-
-         <small>
-           {summary.streakStatus}
-        </small>
         </div>
 
-          {wallet && (
-            <small>
-              Wallet: {wallet.slice(0, 6)}
-              ...
-              {wallet.slice(-4)}
-            </small>
-          )}
+
+        <div className="passport-compact-rank">
+
+          <span>
+            LEVEL {verifiedLevel}
+          </span>
+
+          <strong>
+            {verifiedTier}
+          </strong>
+
         </div>
+
       </div>
+
+
+      <div className="passport-compact-progress">
+
+        <div className="passport-compact-progress-head">
+          <span>
+            Progress to next level
+          </span>
+
+          <strong>
+            {nextRequirementStatus
+              ? `${nextRequirementStatus.completedRequirements}/${nextRequirementStatus.totalRequirements}`
+              : "Complete"}
+          </strong>
+        </div>
+
+        <div className="passport-level-progress">
+          <div
+            className="passport-level-progress-fill"
+            style={{
+              width: `${verifiedProgress}%`,
+            }}
+          />
+        </div>
+
+      </div>
+
+
+      <div className="passport-compact-stats">
+
+        <div>
+          <span>Score</span>
+          <strong>{summary.builderScore}</strong>
+        </div>
+
+        <div>
+          <span>Reputation</span>
+          <strong>{summary.reputation}</strong>
+        </div>
+
+        <div>
+          <span>Streak</span>
+          <strong>
+            {summary.streak.current}d
+          </strong>
+        </div>
+
+      </div>
+
+
+      <div className="passport-compact-footer">
+
+        <span>
+          {summary.network}
+        </span>
+
+        <span>
+          Builder since {summary.builderSince}
+        </span>
+
+      </div>
+
     </div>
-  );
+
+  </div>
+);
 }
 
 export default BuilderPassport;

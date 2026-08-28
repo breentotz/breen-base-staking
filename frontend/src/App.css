@@ -444,112 +444,7 @@
     width: 100%;
   }
 }
-/* =========================
-   Breen Genesis NFT Gallery
-========================= */
 
-.nft-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  );
-  gap: 24px;
-  width: 100%;
-  max-width: 1050px;
-}
-
-.nft-card {
-  overflow: hidden;
-  border: 1px solid #263247;
-  border-radius: 18px;
-  background: linear-gradient(
-    145deg,
-    #111827,
-    #0b1019
-  );
-  box-shadow:
-    0 12px 35px
-    rgba(0, 0, 0, 0.3);
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.nft-card:hover {
-  transform: translateY(-7px);
-  border-color: #3b82f6;
-  box-shadow:
-    0 18px 45px
-    rgba(37, 99, 235, 0.2);
-}
-
-/* NFT artwork */
-
-.nft-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #070b12;
-  border-bottom: 1px solid #263247;
-}
-
-.nft-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition:
-    transform 0.4s ease;
-}
-
-.nft-card:hover .nft-image img {
-  transform: scale(1.05);
-}
-
-/* NFT details */
-
-.nft-card h3 {
-  margin: 18px 18px 7px;
-  color: #ffffff;
-  font-size: 19px;
-}
-
-.nft-card p {
-  margin: 0 18px 18px;
-  color: #8b95a7;
-}
-
-/* Ownership badge */
-
-.owned-badge {
-  display: inline-block;
-  margin:
-    0 18px 20px;
-  padding:
-    7px 12px;
-  border: 1px solid
-    rgba(34, 197, 94, 0.4);
-  border-radius: 999px;
-  background:
-    rgba(34, 197, 94, 0.12);
-  color: #4ade80;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-/* Mobile NFT layout */
-
-@media (max-width: 650px) {
-  .nft-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nft-card {
-    max-width: 420px;
-  }
-}
 /* =========================
    Breen Portfolio
 ========================= */
@@ -854,11 +749,15 @@
 
 .quick-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 16px 20px;
-  border-bottom: 1px solid #263247;
-  background: #0d1420;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-top: 30px;
+  padding: 24px;
+
+  background: rgba(10, 20, 38, 0.72);
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  border-radius: 18px;
 }
 
 .quick-actions button {
@@ -3134,6 +3033,7 @@ letter-spacing: 0.5px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+  width: 100%;
 }
 
 .quick-action-card {
@@ -3687,5 +3587,3399 @@ letter-spacing: 0.5px;
   .ai-welcome-card {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+/* Daily Builder Check-In */
+
+.topbar-wallet-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.daily-checkin-button {
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  background: rgba(249, 115, 22, 0.1);
+  color: #ffb15c;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.daily-checkin-button:hover {
+  transform: translateY(-1px);
+  background: rgba(249, 115, 22, 0.18);
+  border-color: rgba(249, 115, 22, 0.75);
+}
+/* ========================================
+   NOTIFICATION POSITION FIX
+======================================== */
+
+.notification-container {
+  position: fixed;
+  top: 88px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.notification-container .notification {
+  position: relative;
+  top: auto;
+  right: auto;
+}
+.builder-count-badge {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 14px;
+
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  border-radius: 9px;
+
+  background: rgba(59, 130, 246, 0.08);
+
+  color: #bfdbfe;
+
+  font-weight: 700;
+  font-size: 0.9rem;
+
+  white-space: nowrap;
+}
+/* ========================================
+   DAILY CHECK-IN CELEBRATION
+======================================== */
+
+.checkin-celebration-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(3, 7, 18, 0.72);
+  backdrop-filter: blur(5px);
+
+  animation: checkinFadeIn 0.2s ease;
+}
+
+.checkin-celebration-card {
+  width: min(420px, calc(100vw - 40px));
+
+  padding: 36px 30px;
+  border-radius: 24px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(124, 58, 237, 0.28),
+      transparent 55%
+    ),
+    #101a36;
+
+  border: 1px solid rgba(96, 165, 250, 0.35);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(124, 58, 237, 0.22);
+
+  animation: checkinPop 0.35s ease;
+}
+
+.checkin-celebration-icon {
+  font-size: 56px;
+  margin-bottom: 8px;
+
+  animation: checkinPulse 1s ease-in-out infinite;
+}
+
+.checkin-celebration-card h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.checkin-celebration-card h2 {
+  margin: 10px 0;
+}
+
+.checkin-celebration-card p {
+  color: #b8c7e6;
+  margin-bottom: 24px;
+}
+
+.checkin-celebration-card button {
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes checkinFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes checkinPop {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes checkinPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* ========================================
+   DASHBOARD ANALYTICS INTERACTION V1
+======================================== */
+
+.analytics-card.interactive {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.analytics-card.interactive::before {
+  content: "";
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(79, 124, 255, 0.12),
+      transparent 45%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease;
+}
+
+.analytics-card.interactive:hover {
+  border-color:
+    rgba(79, 124, 255, 0.55);
+
+  box-shadow:
+    0 14px 35px
+    rgba(0, 0, 0, 0.28);
+}
+
+.analytics-card.interactive:hover::before {
+  opacity: 1;
+}
+
+.analytics-hover-indicator {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  font-size: 15px;
+
+  color: #64748b;
+
+  opacity: 0;
+
+  transform: translate(
+    -4px,
+    4px
+  );
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.analytics-card.interactive:hover
+.analytics-hover-indicator {
+  opacity: 1;
+
+  transform: translate(
+    0,
+    0
+  );
+
+  color: #93c5fd;
+}
+/* ========================================
+   BREEN WEB3 — DESKTOP FOUNDATION V2
+   BaseScan-inspired structure
+======================================== */
+
+@media (min-width: 1101px) {
+
+  /* Slightly more compact professional sidebar */
+  .sidebar {
+    width: 230px;
+  }
+
+  /* Match main workspace to new sidebar width */
+  .main-content {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+    min-width: 0;
+  }
+
+  /* More usable dashboard workspace */
+  .content-area {
+    width: 100%;
+    padding: 28px 32px 40px;
+    box-sizing: border-box;
+  }
+
+  /* Dashboard should use the available workspace */
+  .dashboard {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Cleaner hero proportions */
+  .dashboard-hero {
+    width: 100%;
+    padding: 26px 28px;
+    box-sizing: border-box;
+  }
+
+  /* Summary cards remain a clean 4-column row */
+  .dashboard-summary {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  /* Analytics becomes adaptive instead of forcing 5 cards */
+  .analytics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .analytics-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+}
+/* ========================================
+   BREEN WEB3 — DASHBOARD HERO V2
+======================================== */
+
+@media (min-width: 1101px) {
+
+  .dashboard-hero {
+    position: relative;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(30, 64, 175, 0.20),
+        rgba(15, 23, 42, 0.78)
+      );
+
+    border: 1px solid rgba(96, 165, 250, 0.16);
+    border-radius: 18px;
+
+    padding: 26px 28px 30px;
+
+    box-shadow:
+      0 18px 50px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+  }
+
+
+  /* subtle Base-style glow */
+
+  .dashboard-hero::before {
+    content: "";
+
+    position: absolute;
+    width: 420px;
+    height: 420px;
+
+    top: -260px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(37, 99, 235, 0.22),
+        transparent 68%
+      );
+
+    pointer-events: none;
+  }
+
+
+  /* Keep hero content above glow */
+
+  .dashboard-hero > * {
+    position: relative;
+    z-index: 1;
+  }
+
+
+  /* Tighter section spacing */
+
+  .dashboard-hero h1 {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+
+  .dashboard-hero > p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+
+  /* Summary cards */
+
+  .dashboard-summary {
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+
+
+  .summary-card {
+    min-height: 132px;
+
+    padding: 20px 22px;
+
+    border-radius: 14px;
+
+    background:
+      rgba(15, 23, 42, 0.68);
+
+    border:
+      1px solid rgba(148, 163, 184, 0.15);
+
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+
+  .summary-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+      rgba(96, 165, 250, 0.38);
+
+    background:
+      rgba(17, 31, 62, 0.82);
+  }
+
+
+  /* Analytics section spacing */
+
+  .builder-analytics {
+    margin-top: 8px;
+  }
+
+
+  .builder-analytics h2,
+  .builder-analytics h3 {
+    margin-bottom: 16px;
+  }
+
+
+  /* Analytics cards */
+
+  .analytics-card {
+    min-height: 128px;
+
+    border-radius: 14px;
+
+    background:
+      rgba(15, 23, 42, 0.72);
+
+    border:
+      1px solid rgba(148, 163, 184, 0.14);
+
+    box-shadow: none;
+  }
+
+
+  .analytics-card:hover {
+    border-color:
+      rgba(79, 124, 255, 0.42);
+
+    background:
+      rgba(17, 31, 62, 0.86);
+  }
+
+}
+/* ========================================
+   BREEN WEB3 — ANALYTICS CARDS V2
+======================================== */
+
+@media (min-width: 1101px) {
+
+  .analytics-grid {
+    align-items: start;
+  }
+
+  .analytics-card {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    min-height: 138px;
+
+    padding: 22px;
+
+    cursor: default;
+
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+
+  /* Only interactive cards get pointer behavior */
+
+  .analytics-card.interactive {
+    cursor: pointer;
+  }
+
+
+  .analytics-card.interactive:hover {
+    transform: translateY(-3px);
+
+    border-color:
+      rgba(79, 124, 255, 0.52);
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.18);
+  }
+
+
+  /* Icon */
+
+  .analytics-icon {
+    flex: 0 0 auto;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 27px;
+  }
+
+
+  /* Main metric area */
+
+  .analytics-content {
+    flex: 1;
+    min-width: 0;
+
+    padding-right: 30px;
+  }
+
+
+  .analytics-content small {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+
+  .analytics-content h2 {
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+
+  /* +/- control */
+
+  .analytics-hover-indicator {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+      rgba(59, 130, 246, 0.10);
+
+    border:
+      1px solid rgba(96, 165, 250, 0.16);
+
+    font-size: 17px;
+    line-height: 1;
+
+    opacity: 0.75;
+
+    transition:
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+
+  .analytics-card.interactive:hover
+  .analytics-hover-indicator {
+    opacity: 1;
+
+    background:
+      rgba(59, 130, 246, 0.18);
+  }
+
+
+  /* Expanded information occupies its own row */
+
+  .analytics-details {
+    flex-basis: 100%;
+    width: 100%;
+
+    margin-top: 18px;
+    padding-top: 16px;
+
+    border-top:
+      1px solid rgba(148, 163, 184, 0.14);
+
+    animation:
+      breenAnalyticsOpen 0.22s ease;
+  }
+
+
+  .analytics-details p {
+    margin: 0 0 7px;
+
+    font-size: 14px;
+  }
+
+
+  .analytics-details small {
+    color: #94a3b8;
+  }
+
+
+  /* Expanded card receives a little emphasis */
+
+  .analytics-card.expanded {
+    border-color:
+      rgba(79, 124, 255, 0.48);
+
+    background:
+      rgba(17, 31, 62, 0.92);
+  }
+
+}
+
+
+@keyframes breenAnalyticsOpen {
+
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+/* ========================================
+   BREEN WEB3 — ANALYTICS EXPANDED LAYOUT
+======================================== */
+
+@media (min-width: 1101px) {
+
+  .analytics-card.expanded {
+    grid-column: span 2;
+  }
+
+  .analytics-card.expanded .analytics-details {
+  display: block;
+  width: 100%;
+}
+
+  .analytics-card.expanded .analytics-details p,
+  .analytics-card.expanded .analytics-details small {
+    margin: 0;
+  }
+
+}
+/* ========================================
+   BREEN WEB3 — ANALYTICS DETAIL TILES
+======================================== */
+
+.analytics-detail-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.analytics-detail-item {
+  padding: 13px 14px;
+
+  border-radius: 11px;
+
+  background:
+    rgba(15, 23, 42, 0.55);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.12);
+}
+
+.analytics-detail-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #8f9db5;
+
+  font-size: 12px;
+}
+
+.analytics-detail-item strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+@media (max-width: 700px) {
+  .analytics-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   BREEN WEB3 — SIDEBAR V2
+   ===================================================== */
+
+.sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #0b1220 0%,
+      #090f1a 55%,
+      #080d16 100%
+    );
+
+  border-right: 1px solid rgba(100, 140, 255, 0.14);
+}
+
+
+/* BRAND */
+
+.sidebar .brand {
+  padding-bottom: 20px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar .brand h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: #ffffff;
+}
+
+.sidebar .brand h2::first-letter {
+  color: #4f7cff;
+}
+
+.sidebar .brand p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #7f91b3;
+}
+
+
+/* NAVIGATION */
+
+.redesigned-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+/* SECTION LABELS */
+
+.nav-section-label {
+  display: block;
+  padding: 0 12px;
+  margin-bottom: 5px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+
+  color: #536582;
+
+  user-select: none;
+}
+
+
+/* NAV BUTTON */
+
+.redesigned-nav button {
+  position: relative;
+
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 9px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #aebbd0;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+/* ICON */
+
+.redesigned-nav .nav-icon {
+  width: 20px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  font-size: 15px;
+
+  transition: transform 0.18s ease;
+}
+
+
+/* HOVER */
+
+.redesigned-nav button:hover {
+  color: #ffffff;
+
+  background: rgba(64, 112, 255, 0.08);
+
+  border-color: rgba(78, 126, 255, 0.16);
+
+  transform: translateX(3px);
+}
+
+.redesigned-nav button:hover .nav-icon {
+  transform: scale(1.08);
+}
+
+
+/* ACTIVE PAGE */
+
+.redesigned-nav button.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.28),
+      rgba(37, 99, 235, 0.10)
+    );
+
+  border-color: rgba(79, 124, 255, 0.30);
+
+  box-shadow:
+    inset 3px 0 0 #4f7cff,
+    0 0 18px rgba(37, 99, 235, 0.08);
+}
+
+
+/* ACTIVE ICON */
+
+.redesigned-nav button.active .nav-icon {
+  transform: scale(1.08);
+}
+
+
+/* SUBTLE GLOW ON ACTIVE BUTTON */
+
+.redesigned-nav button.active::after {
+  content: "";
+
+  position: absolute;
+
+  right: 10px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #4f7cff;
+
+  box-shadow: 0 0 8px rgba(79, 124, 255, 0.9);
+}
+/* =========================================
+   BREEN WEB3 — SIDEBAR DROPDOWNS
+========================================= */
+
+.nav-section-toggle {
+  width: 100% !important;
+  min-height: 28px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 4px 11px !important;
+
+  border: none !important;
+  border-radius: 7px !important;
+
+  background: transparent !important;
+
+  color: #536582 !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.4px !important;
+
+  cursor: pointer;
+
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.nav-section-toggle:hover {
+  color: #8aa9dd !important;
+  background: rgba(79, 124, 255, 0.05) !important;
+
+  transform: none !important;
+}
+
+.nav-section-toggle::after {
+  display: none !important;
+}
+
+.nav-section-arrow {
+  font-size: 15px;
+  line-height: 1;
+
+  color: #6680a8;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-section-toggle:hover
+.nav-section-arrow {
+  color: #8ab4ff;
+}
+
+
+/* Items inside each dropdown */
+
+.nav-section-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  animation:
+    breenNavOpen 0.2s ease;
+}
+
+
+@keyframes breenNavOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================================
+   BREEN WEB3 — COMPACT SIDEBAR MODE
+========================================= */
+
+.sidebar {
+  transition:
+    width 0.25s ease,
+    padding 0.25s ease;
+}
+
+.main-content {
+  transition:
+    margin-left 0.25s ease,
+    width 0.25s ease;
+}
+
+
+/* COLLAPSED SIDEBAR */
+
+.sidebar.sidebar-collapsed {
+  width: 82px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+/* Expand workspace when sidebar is compact */
+
+@media (min-width: 1101px) {
+  .sidebar.sidebar-collapsed + .main-content {
+    margin-left: 82px;
+    width: calc(100% - 82px);
+  }
+}
+
+
+/* BRAND */
+
+.sidebar-collapsed .sidebar-brand {
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sidebar-collapsed .sidebar-brand-text {
+  text-align: center;
+}
+
+.sidebar-collapsed .sidebar-brand-text h2 {
+  font-size: 22px;
+  color: #4f7cff;
+}
+
+.sidebar-collapsed .sidebar-collapse-btn {
+  margin: 0 auto;
+}
+
+
+/* Hide section text */
+
+.sidebar-collapsed .nav-section-toggle span:first-child {
+  display: none;
+}
+
+
+/* Center section arrow */
+
+.sidebar-collapsed .nav-section-toggle {
+  justify-content: center !important;
+  padding: 4px !important;
+}
+
+.sidebar-collapsed .nav-section-arrow {
+  font-size: 13px;
+}
+
+
+/* Compact navigation buttons */
+
+.sidebar-collapsed
+.redesigned-nav
+.nav-section-items
+button {
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 9px;
+
+  gap: 0;
+}
+
+
+/* Hide navigation labels */
+
+.sidebar-collapsed
+.redesigned-nav
+.nav-section-items
+button > span:not(.nav-icon) {
+  display: none;
+}
+
+
+/* Center icons */
+
+.sidebar-collapsed .nav-icon {
+  width: 24px;
+
+  font-size: 18px;
+}
+
+
+/* Remove active dot because space is limited */
+
+.sidebar-collapsed
+.redesigned-nav
+button.active::after {
+  display: none;
+}
+
+
+/* Active compact item */
+
+.sidebar-collapsed
+.redesigned-nav
+button.active {
+  box-shadow:
+    inset 3px 0 0 #4f7cff,
+    0 0 18px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Slightly tighter group spacing */
+
+.sidebar-collapsed .redesigned-nav {
+  gap: 12px;
+}
+
+.sidebar-collapsed .nav-section {
+  gap: 3px;
+}
+/* =========================================
+   COMPACT SIDEBAR — LABEL FIX
+========================================= */
+
+.sidebar-collapsed
+.redesigned-nav
+.nav-section > button:not(.nav-section-toggle) {
+  width: 48px;
+  min-width: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  padding: 9px;
+  gap: 0;
+  overflow: hidden;
+}
+
+.sidebar-collapsed
+.redesigned-nav
+.nav-section > button:not(.nav-section-toggle)
+span:not(.nav-icon) {
+  display: none;
+}
+
+.sidebar-collapsed
+.redesigned-nav
+.nav-section > button:not(.nav-section-toggle)
+.nav-icon {
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  font-size: 18px;
+}
+/* =========================================
+   BREEN WEB3 — WALLET DROPDOWN V1
+========================================= */
+
+.wallet-menu-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+
+/* Wallet button */
+
+.wallet-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wallet-menu-arrow {
+  font-size: 12px;
+  color: #8ea3c7;
+}
+
+
+/* Dropdown panel */
+
+.wallet-dropdown {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 240px;
+
+  padding: 12px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.98),
+      rgba(9, 15, 26, 0.98)
+    );
+
+  border:
+    1px solid rgba(96, 165, 250, 0.18);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.38);
+
+  z-index: 1000;
+
+  animation:
+    walletDropdownOpen 0.18s ease;
+}
+
+
+/* Header */
+
+.wallet-dropdown-header {
+  padding: 8px 8px 12px;
+
+  border-bottom:
+    1px solid rgba(148, 163, 184, 0.12);
+}
+
+.wallet-dropdown-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 11px;
+
+  color: #7f91ad;
+}
+
+.wallet-dropdown-header strong {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+
+/* Network status */
+
+.wallet-dropdown-network {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 12px 4px;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border:
+    1px solid rgba(79, 124, 255, 0.12);
+
+  color: #cdd8ea;
+
+  font-size: 13px;
+}
+
+.network-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.8);
+}
+
+
+/* Actions */
+
+.wallet-dropdown-action {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  border:
+    1px solid transparent;
+
+  background: transparent;
+
+  color: #c7d2e4;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.wallet-dropdown-action:hover {
+  background:
+    rgba(79, 124, 255, 0.08);
+
+  border-color:
+    rgba(79, 124, 255, 0.15);
+
+  color: #ffffff;
+}
+
+.wallet-dropdown-action.danger {
+  color: #fca5a5;
+}
+
+.wallet-dropdown-action.danger:hover {
+  background:
+    rgba(239, 68, 68, 0.08);
+
+  border-color:
+    rgba(239, 68, 68, 0.18);
+
+  color: #fecaca;
+}
+
+
+/* Animation */
+
+@keyframes walletDropdownOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   BREEN WEB3 — WALLET DROPDOWN POLISH V2
+========================================= */
+
+.wallet-dropdown {
+  overflow: hidden;
+}
+
+
+/* Normal actions become subtle */
+
+.wallet-dropdown-action {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 4px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.08);
+
+  color: #cbd5e1;
+}
+
+.wallet-dropdown-action:hover {
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  border-color:
+    rgba(96, 165, 250, 0.22);
+
+  color: #ffffff;
+
+  box-shadow:
+    inset 0 0 18px
+    rgba(37, 99, 235, 0.05);
+}
+
+
+/* Disconnect separated visually */
+
+.wallet-dropdown-action.danger {
+  margin-top: 10px;
+
+  border-top:
+    1px solid rgba(248, 113, 113, 0.10);
+
+  background:
+    rgba(239, 68, 68, 0.035);
+
+  color: #fca5a5;
+}
+
+.wallet-dropdown-action.danger:hover {
+  background:
+    rgba(239, 68, 68, 0.10);
+
+  border-color:
+    rgba(248, 113, 113, 0.22);
+
+  color: #fecaca;
+}
+
+
+/* Network row slightly cleaner */
+
+.wallet-dropdown-network {
+  margin-top: 12px;
+  margin-bottom: 10px;
+
+  background:
+    rgba(34, 197, 94, 0.045);
+
+  border-color:
+    rgba(34, 197, 94, 0.12);
+}
+
+
+/* Wallet button hover */
+
+.wallet-button {
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.wallet-button:hover {
+  border-color:
+    rgba(96, 165, 250, 0.38);
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  box-shadow:
+    0 0 20px
+    rgba(37, 99, 235, 0.08);
+}
+/* =========================================
+   BREEN WEB3 — PREMIUM TOPBAR V2
+========================================= */
+
+.premium-topbar {
+  min-height: 88px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 18px 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 16, 28, 0.98),
+      rgba(8, 13, 23, 0.96)
+    );
+
+  border-bottom:
+    1px solid rgba(96, 165, 250, 0.12);
+
+  backdrop-filter: blur(18px);
+}
+
+
+/* LEFT SIDE */
+
+.topbar-heading {
+  min-width: 0;
+}
+
+.topbar-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-title-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  color: #8ab4ff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.20),
+      rgba(99, 102, 241, 0.10)
+    );
+
+  border:
+    1px solid rgba(96, 165, 250, 0.18);
+
+  box-shadow:
+    0 0 22px rgba(37, 99, 235, 0.08);
+}
+
+.premium-topbar h1 {
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 1.2;
+
+  color: #ffffff;
+}
+
+.premium-topbar p {
+  margin: 5px 0 0;
+
+  color: #7f91ad;
+
+  font-size: 12px;
+}
+
+.topbar-separator {
+  margin: 0 6px;
+
+  color: #4f7cff;
+}
+
+
+/* RIGHT SIDE */
+
+.topbar-wallet-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+
+/* SHARED PREMIUM CHIP */
+
+.premium-header-chip,
+.premium-wallet-button,
+.topbar-connect-button {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 9px 13px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+
+/* BUILDERS */
+
+.builder-count-badge.premium-header-chip {
+  color: #c8d5e9;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.12);
+}
+
+
+/* DAILY CHECK-IN */
+
+.daily-checkin-button.premium-header-chip {
+  border:
+    1px solid rgba(96, 165, 250, 0.16);
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  color: #b9ccf2;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.daily-checkin-button.premium-header-chip:hover:not(:disabled) {
+  color: #ffffff;
+
+  border-color:
+    rgba(96, 165, 250, 0.30);
+
+  background:
+    rgba(37, 99, 235, 0.14);
+
+  box-shadow:
+    0 0 20px rgba(37, 99, 235, 0.08);
+}
+
+.daily-checkin-button.premium-header-chip.checked-in {
+  color: #86efac;
+
+  background:
+    rgba(34, 197, 94, 0.06);
+
+  border-color:
+    rgba(34, 197, 94, 0.16);
+}
+
+
+/* WALLET BUTTON */
+
+.premium-wallet-button {
+  border:
+    1px solid rgba(96, 165, 250, 0.16) !important;
+
+  background:
+    rgba(255, 255, 255, 0.035) !important;
+
+  color: #d7e2f3 !important;
+}
+
+.premium-wallet-button:hover {
+  background:
+    rgba(37, 99, 235, 0.08) !important;
+
+  border-color:
+    rgba(96, 165, 250, 0.30) !important;
+}
+
+.wallet-chevron {
+  transition:
+    transform 0.18s ease;
+}
+
+.wallet-chevron.open {
+  transform: rotate(180deg);
+}
+
+
+/* CONNECT WALLET */
+
+.topbar-connect-button {
+  border:
+    1px solid rgba(96, 165, 250, 0.22);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3158d8
+    );
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* WALLET DROPDOWN ICON ALIGNMENT */
+
+.wallet-dropdown-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 6px;
+
+  color: #93a8c8;
+}
+
+.wallet-dropdown-title span {
+  margin: 0;
+}
+
+.wallet-dropdown-network {
+  justify-content: flex-start;
+}
+
+.wallet-dropdown-network .network-dot {
+  margin-left: auto;
+}
+
+.wallet-dropdown-action svg {
+  flex-shrink: 0;
+}
+
+
+/* RESPONSIVE HEADER */
+
+@media (max-width: 1050px) {
+  .premium-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar-wallet-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+/* =========================================
+   BREEN WEB3 — BASE BUILDER PULSE V1
+========================================= */
+
+.base-builder-pulse {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 24px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(96, 165, 250, 0.16);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 15, 28, 0.96),
+      rgba(13, 25, 48, 0.94)
+    );
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.16);
+}
+
+
+/* subtle moving glow */
+
+.base-builder-pulse-glow {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  top: -210px;
+  left: -80px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.26),
+      transparent 68%
+    );
+
+  pointer-events: none;
+
+  animation:
+    pulseGlowMove 7s ease-in-out infinite alternate;
+}
+
+
+/* faint grid */
+
+.base-builder-pulse::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.14;
+
+  background-image:
+    linear-gradient(
+      rgba(96, 165, 250, 0.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(96, 165, 250, 0.10) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    34px 34px;
+
+  pointer-events: none;
+}
+
+
+/* content */
+
+.base-builder-pulse-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding:
+    18px 20px 16px;
+}
+
+
+.base-builder-pulse-left {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  min-width: 0;
+}
+
+
+/* icon */
+
+.pulse-live-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  color: #7fb0ff;
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.17);
+
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.08);
+}
+
+
+/* text */
+
+.pulse-copy {
+  min-width: 0;
+}
+
+
+.pulse-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+  color: #7690bc;
+}
+
+
+.pulse-live-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #86efac;
+
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+
+.pulse-live-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 9px rgba(34, 197, 94, 0.9);
+
+  animation:
+    pulseLiveDot 1.4s ease-in-out infinite;
+}
+
+
+.pulse-message {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.pulse-message strong {
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+
+.pulse-message span {
+  color: #8799b7;
+
+  font-size: 11px;
+}
+
+
+/* signal badge */
+
+.pulse-signal {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+
+  padding:
+    8px 10px;
+
+  border-radius: 9px;
+
+  color: #9cb9e8;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.13);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* animated bottom signal line */
+
+.pulse-progress {
+  position: relative;
+
+  height: 2px;
+
+  background:
+    rgba(96, 165, 250, 0.07);
+}
+
+
+.pulse-progress-line {
+  position: absolute;
+
+  top: 0;
+  left: -35%;
+
+  width: 35%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #2563eb,
+      #7c3aed,
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(37, 99, 235, 0.75);
+
+  animation:
+    breenSignalSweep 3.8s linear infinite;
+}
+
+
+/* animations */
+
+@keyframes breenSignalSweep {
+  from {
+    left: -35%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+
+@keyframes pulseLiveDot {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+
+@keyframes pulseGlowMove {
+  from {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  to {
+    transform:
+      translate3d(210px, 45px, 0);
+  }
+}
+
+
+/* responsive */
+
+@media (max-width: 800px) {
+
+  .base-builder-pulse-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pulse-signal {
+    margin-left: 56px;
+  }
+
+}
+/* =========================================
+   BREEN WEB3 — PULSE MESSAGE ROTATION
+========================================= */
+
+.pulse-message-animated {
+  animation:
+    breenPulseMessageIn 0.45s ease;
+}
+
+@keyframes breenPulseMessageIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================================
+   BREEN WEB3 — PULSE CONTROLS V2
+========================================= */
+
+.pulse-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.pulse-navigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pulse-counter {
+  margin-right: 3px;
+
+  color: #6f86aa;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.pulse-nav-button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 8px;
+
+  border:
+    1px solid rgba(96, 165, 250, 0.14);
+
+  background:
+    rgba(37, 99, 235, 0.05);
+
+  color: #8eabda;
+
+  font-size: 18px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.pulse-nav-button:hover {
+  color: #ffffff;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  border-color:
+    rgba(96, 165, 250, 0.28);
+
+  transform: translateY(-1px);
+}
+
+@media (max-width: 800px) {
+  .pulse-controls {
+    width: 100%;
+
+    justify-content: space-between;
+
+    margin-left: 56px;
+  }
+}
+/* =========================================
+   PREMIUM DASHBOARD SECTION TITLES
+========================================= */
+
+.dashboard-section-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.dashboard-section-title svg {
+  color: #6ea8ff;
+  flex-shrink: 0;
+}
+/* =========================================
+   PREMIUM SUMMARY CARD LABELS
+========================================= */
+
+.summary-card-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-card-label svg {
+  color: #6ea8ff;
+  flex-shrink: 0;
+}
+/* PREMIUM DASHBOARD HERO */
+
+.dashboard-hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dashboard-hero-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  color: #6ea8ff;
+  background: rgba(37, 99, 235, 0.12);
+
+  border: 1px solid rgba(96, 165, 250, 0.18);
+
+  box-shadow:
+    inset 0 0 18px rgba(59, 130, 246, 0.08),
+    0 0 24px rgba(37, 99, 235, 0.08);
+}
+
+.dashboard-hero-heading h1 {
+  margin: 0;
+}
+
+.dashboard-hero-heading p {
+  margin: 3px 0 0;
+}
+/* PREMIUM DASHBOARD FEATURE HEADERS */
+
+.dashboard-feature-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: #a9c7ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-feature-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  color: #6ea8ff;
+  background: rgba(37, 99, 235, 0.12);
+
+  border: 1px solid rgba(96, 165, 250, 0.16);
+
+  box-shadow:
+    inset 0 0 14px rgba(59, 130, 246, 0.06),
+    0 0 18px rgba(37, 99, 235, 0.05);
+}
+
+.dashboard-feature-label span {
+  line-height: 1;
+}
+/* PREMIUM BUILDER STREAK */
+
+.streak-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #9fc2ff;
+  font-weight: 600;
+}
+
+.streak-card-heading svg {
+  color: #6ea8ff;
+}
+
+.streak-milestone-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #9fc2ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.streak-milestone-label svg {
+  color: #6ea8ff;
+}
+
+.streak-week-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.streak-inline-day {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  color: #52627a;
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.streak-inline-day.active {
+  color: #6ea8ff;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  border-color: rgba(96, 165, 250, 0.22);
+
+  box-shadow:
+    inset 0 0 12px rgba(59, 130, 246, 0.08),
+    0 0 16px rgba(37, 99, 235, 0.06);
+}
+/* PREMIUM QUICK ACTIONS */
+
+.premium-quick-action {
+  position: relative;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.premium-quick-action:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(96, 165, 250, 0.32);
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.premium-quick-action .quick-action-icon {
+  color: #6ea8ff;
+}
+
+.premium-quick-action .quick-action-arrow {
+  color: #6586b9;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.premium-quick-action:hover
+.quick-action-arrow {
+  color: #8ab4ff;
+  transform: translate(2px, -2px);
+}
+/* =========================================
+   PREMIUM STAKING SUMMARY
+========================================= */
+
+.premium-staking-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 22px 26px;
+}
+
+.staking-summary-content {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.staking-summary-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.staking-summary-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  color: #6ea8ff;
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.18);
+}
+
+.staking-summary-heading span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #8ea5c9;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.staking-summary-heading h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+.staking-summary-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 10px;
+
+  border-radius: 9px;
+
+  color: #86efac;
+
+  background:
+    rgba(34, 197, 94, 0.06);
+
+  border:
+    1px solid rgba(34, 197, 94, 0.14);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.staking-summary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid rgba(96, 165, 250, 0.20);
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  color: #a9c7ff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.staking-summary-action:hover {
+  color: #ffffff;
+
+  background:
+    rgba(37, 99, 235, 0.16);
+
+  border-color:
+    rgba(96, 165, 250, 0.32);
+
+  transform: translateY(-1px);
+}
+
+@media (max-width: 800px) {
+  .premium-staking-summary,
+  .staking-summary-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+/* =========================================
+   PREMIUM WALLET STAT CARDS
+========================================= */
+
+.premium-stat-card {
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.premium-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(96, 165, 250, 0.24);
+
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+.premium-stat-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 18px;
+
+  color: #8ea3c4;
+  font-size: 13px;
+}
+
+.premium-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  color: #6ea8ff;
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.16);
+}
+
+.premium-stat-card h3 {
+  margin: 0 0 14px;
+
+  font-size: 28px;
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+.premium-stat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.premium-stat-footer strong {
+  color: #5e9cff;
+
+  font-size: 12px;
+}
+
+.premium-stat-footer small {
+  color: #687b9a;
+
+  font-size: 10px;
+}
+.premium-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .premium-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .premium-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 1150px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   SIDEBAR — 100% SCREEN HEIGHT FIX
+========================================= */
+
+.sidebar {
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Navigation scrolls independently */
+
+.redesigned-nav {
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 4px;
+  padding-bottom: 24px;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(96, 165, 250, 0.22)
+    transparent;
+}
+
+
+/* Chrome / Edge scrollbar */
+
+.redesigned-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.redesigned-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.redesigned-nav::-webkit-scrollbar-thumb {
+  background:
+    rgba(96, 165, 250, 0.20);
+
+  border-radius: 10px;
+}
+
+.redesigned-nav::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(96, 165, 250, 0.34);
+}
+
+
+/* Slightly tighter vertical layout */
+
+.redesigned-nav {
+  gap: 14px;
+}
+
+.nav-section {
+  gap: 3px;
+}
+
+.redesigned-nav
+.nav-section
+> button:not(.nav-section-toggle) {
+  min-height: 39px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+/* =========================================
+   PREMIUM SIDEBAR DROPDOWN ANIMATION
+========================================= */
+
+.nav-section-items {
+  animation: navDropdownOpen 0.28s ease-out;
+  transform-origin: top;
+}
+
+@keyframes navDropdownOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth individual navigation items */
+.nav-section-items > button {
+  animation: navItemFade 0.32s ease-out both;
+}
+
+@keyframes navItemFade {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Premium arrow movement */
+.nav-section-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-section-toggle:hover .nav-section-arrow {
+  color: #6ea8ff;
+  transform: translateX(2px);
+}
+/* =========================================
+   WALLET DROPDOWN — STACKING FIX
+========================================= */
+
+.premium-topbar {
+  position: relative;
+  z-index: 2000;
+}
+
+.wallet-menu-wrapper {
+  position: relative;
+  z-index: 3000;
+}
+
+.wallet-dropdown {
+  z-index: 4000;
+}
+/* =========================================
+   BREEN WEB3 — ANALYTICS GRID FINAL POLISH
+========================================= */
+
+@media (min-width: 1101px) {
+
+  .builder-analytics .analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr));
+
+    gap: 14px;
+
+    align-items: stretch;
+  }
+
+
+  /* First row — 3 equal cards */
+
+  .builder-analytics .analytics-card:nth-child(1),
+  .builder-analytics .analytics-card:nth-child(2),
+  .builder-analytics .analytics-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+
+  /* Second row — 2 equal cards */
+
+  .builder-analytics .analytics-card:nth-child(4),
+  .builder-analytics .analytics-card:nth-child(5) {
+    grid-column: span 3;
+  }
+
+
+  /* Consistent card dimensions */
+
+  .builder-analytics .analytics-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 138px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* Expanded cards stay controlled */
+
+  .builder-analytics .analytics-card.expanded {
+    grid-column: span 3;
+  }
+
+}
+/* =========================================
+   BREEN WEB3 — ANALYTICS INTERNAL POLISH
+========================================= */
+
+@media (min-width: 1101px) {
+
+  .builder-analytics .analytics-card {
+    min-height: 124px;
+    padding: 18px 20px;
+  }
+
+  .builder-analytics .analytics-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+
+  .builder-analytics .analytics-content {
+    padding-right: 0;
+  }
+
+  .builder-analytics .analytics-content small {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .builder-analytics .analytics-content h2 {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .builder-analytics .analytics-subtitle {
+    margin-top: 3px;
+  }
+
+}
+/* ========================================
+   STAKING — FINAL COMPACT DESKTOP LAYOUT
+======================================== */
+
+.staking-page {
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.staking-page .dashboard-title {
+  margin-bottom: 16px;
+}
+
+.staking-page .dashboard-title h2 {
+  margin-bottom: 4px;
+}
+
+.staking-page .stats-grid {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.staking-page .stat-card {
+  padding: 18px 20px;
+  min-height: 118px;
+}
+
+.staking-page .staking-action-panel {
+  padding: 22px 24px;
+  max-width: 100%;
+}
+
+.staking-page .staking-action-panel h2 {
+  margin: 0 0 4px;
+}
+
+.staking-page .staking-step-badge {
+  margin-bottom: 6px;
+}
+
+.staking-page .staking-action-panel > p {
+  margin: 0 0 12px;
+}
+
+.staking-page .vault-info-row {
+  margin: 10px 0 14px;
+}
+
+.staking-page .staking-mini-card {
+  margin: 0;
+}
+
+.staking-page .amount-input-wrapper {
+  margin-top: 14px;
+}
+
+.staking-page .staking-actions {
+  margin-top: 10px;
+  gap: 10px;
+}
+.staking-page .amount-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 570px;
+}
+
+.staking-page .amount-input-wrapper input {
+  flex: 1;
+  min-width: 0;
+}
+
+.staking-page .max-button {
+  flex: 0 0 auto;
+}
+
+.staking-page .staking-actions {
+  display: flex;
+  width: fit-content;
+}
+
+.staking-page .staking-actions button {
+  min-width: 126px;
+  width: auto;
+}
+/* =========================================
+   STAKING PAGE — VIEWPORT FIT
+   Keep this scoped to Staking only
+========================================= */
+
+.content-area:has(.staking-page) {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.staking-page {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.staking-page .dashboard-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.staking-page .stats-grid {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/* =========================================
+   STAKING — COMPACT TRANSACTION TIMELINE
+========================================= */
+
+.staking-page .transaction-timeline {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 6px;
+
+  margin: 10px 0 8px;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(79, 140, 255, 0.14);
+
+  background:
+    rgba(17, 24, 39, 0.48);
+}
+
+
+.staking-page .timeline-step {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  min-width: 0;
+
+  color: #6f7d96;
+
+  text-align: left;
+}
+
+
+.staking-page .timeline-step span {
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.22);
+
+  background:
+    rgba(30, 41, 59, 0.72);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.staking-page .timeline-step p {
+  margin: 0;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+
+.staking-page .timeline-step.active {
+  color: #8ab4ff;
+}
+
+
+.staking-page .timeline-step.active span {
+  color: #ffffff;
+
+  border-color: #4f8cff;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 10px rgba(37, 99, 235, 0.20);
+}
+
+
+.staking-page .timeline-step.complete {
+  color: #6ee7a6;
+}
+
+
+.staking-page .timeline-step.complete span {
+  color: #ffffff;
+
+  border-color: #22c55e;
+
+  background: #16a34a;
+}
+
+
+/* Transaction feedback */
+
+.staking-page .transaction-status,
+.staking-page .transaction-message {
+  margin: 6px 0;
+
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+
+.staking-page .transaction-link {
+  display: inline-block;
+
+  margin: 4px 0 8px;
+
+  font-size: 11px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 750px) {
+
+  .staking-page .transaction-timeline {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .staking-page .timeline-step {
+    justify-content: flex-start;
+  }
+
+}
+/* =========================================================
+   BREEN TOKEN PAGE
+   Compact desktop workspace
+========================================================= */
+
+.token-page-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.8fr);
+  grid-template-areas:
+    "info transfer"
+    "wallet transfer";
+  gap: 14px;
+
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* ---------- TOKEN INFORMATION ---------- */
+
+.token-page-card > div:not(.token-transfer):not(.token-wallet) {
+  background: #0c1526;
+  border: 1px solid #1d2b44;
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+/*
+  Put the normal information cards into a compact
+  horizontal section on the left.
+*/
+.token-page-card {
+  position: relative;
+}
+
+.token-label {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #7890b5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.token-page-card h1,
+.token-page-card h2 {
+  margin: 0;
+}
+
+/* Token values */
+
+.token-page-card > div:not(.token-transfer):not(.token-wallet) h2 {
+  color: #f4f7ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Balance gets stronger emphasis */
+
+.token-page-card > div:not(.token-transfer):not(.token-wallet) h1 {
+  color: #ffffff;
+  font-size: clamp(26px, 2.3vw, 38px);
+  line-height: 1.1;
+}
+
+
+/* ---------- SEND BREEN ---------- */
+
+.token-transfer {
+  grid-area: transfer;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 37, 72, 0.95),
+      rgba(10, 20, 39, 0.98)
+    );
+
+  border: 1px solid #294777;
+  border-radius: 16px;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.token-transfer h2 {
+  margin: 0 0 5px;
+
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.token-transfer label {
+  color: #91a6c8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.token-transfer input {
+  width: 100%;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  color: #ffffff;
+  background: #08111f;
+
+  border: 1px solid #263a5a;
+  border-radius: 9px;
+
+  outline: none;
+}
+
+.token-transfer input:focus {
+  border-color: #3977ff;
+}
+
+.token-transfer input:disabled {
+  color: #64748b;
+  background: #0a1220;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.token-transfer button {
+  width: 100%;
+  min-height: 42px;
+
+  margin-top: 5px;
+
+  border: 1px solid #3977ff;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.token-transfer button:hover:not(:disabled) {
+  background: #3474ff;
+}
+
+.token-transfer button:disabled {
+  background: #17243a;
+  border-color: #263750;
+  color: #70809a;
+
+  cursor: not-allowed;
+}
+
+
+/* ---------- WALLET ---------- */
+
+.token-wallet {
+  grid-area: wallet;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 13px 16px;
+
+  background: #0a1322;
+  border: 1px solid #1c2a41;
+  border-radius: 12px;
+}
+
+.token-wallet span {
+  color: #7890b5;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.token-wallet p {
+  margin: 0;
+
+  color: #dce7ff;
+  font-size: 12px;
+  font-weight: 600;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ---------- STATUS MESSAGE ---------- */
+
+.token-message {
+  margin: 5px 0 0;
+
+  color: #9db5dc;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   COMPACT DESKTOP
+========================================================= */
+
+@media (min-width: 900px) {
+
+  .token-page-card {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr))
+      minmax(320px, 1.15fr);
+
+    grid-template-areas:
+      "name symbol balance transfer"
+      "network wallet wallet transfer";
+
+    align-items: stretch;
+  }
+
+  /*
+    Current JSX order after token-transfer:
+    2 = Token Name
+    3 = Symbol
+    4 = Network
+    5 = Balance
+    6 = Wallet
+  */
+
+  .token-page-card > div:nth-child(2) {
+    grid-area: name;
+  }
+
+  .token-page-card > div:nth-child(3) {
+    grid-area: symbol;
+  }
+
+  .token-page-card > div:nth-child(4) {
+    grid-area: network;
+  }
+
+  .token-page-card > div:nth-child(5) {
+    grid-area: balance;
+  }
+
+  .token-wallet {
+    grid-area: wallet;
+  }
+}
+
+
+/* =========================================================
+   MOBILE / SMALL SCREEN
+========================================================= */
+
+@media (max-width: 899px) {
+
+  .token-page-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "transfer"
+      "wallet";
+  }
+
+  .token-page-card > div {
+    grid-column: 1;
+  }
+
+  .token-transfer {
+    grid-area: auto;
+  }
+
+  .token-wallet {
+    grid-area: auto;
   }
 }

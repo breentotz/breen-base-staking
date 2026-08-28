@@ -46,4 +46,20 @@ export const achievementData = [
     completed: true,
     description: "Complete your first Base Sepolia deployment.",
   },
+
+  {
+  id: 7,
+  title: "First Flame",
+  icon: "🔥",
+  completed: false,
+  description: "Maintain a 3-day Builder Streak.",
+},
+
+{
+  id: 8,
+  title: "First Stake",
+  icon: "🏦",
+  completed: false,
+  description: "Stake BREEN in the Breen Vault.",
+},
 ];

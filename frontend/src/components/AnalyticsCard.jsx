@@ -5,6 +5,7 @@ function AnalyticsCard({
   color = "#4F7CFF",
   progress = null,
   subtitle = "",
+  details = null,
 }) {
   return (
     <div className="analytics-card">
@@ -21,10 +22,10 @@ function AnalyticsCard({
         <h2>{value}</h2>
 
         {subtitle && (
-  <p className="analytics-subtitle">
-    {subtitle}
-  </p>
-)}
+          <p className="analytics-subtitle">
+            {subtitle}
+          </p>
+        )}
 
         {progress !== null && (
           <div className="analytics-progress">
@@ -34,6 +35,12 @@ function AnalyticsCard({
                 width: `${progress}%`,
               }}
             />
+          </div>
+        )}
+
+        {details && (
+          <div className="analytics-details visible">
+            {details}
           </div>
         )}
       </div>

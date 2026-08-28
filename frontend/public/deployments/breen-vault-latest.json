@@ -1,0 +1,8 @@
+{
+  "contract": "BreenVault",
+  "address": "0xef09F81a45167292DCEaf584CC5805e8169934bB",
+  "chainId": "84532",
+  "network": "baseSepolia",
+  "deployer": "0x06d71EeD44d152D88e6769AFbb7CB3bBBa2471d0",
+  "txHash": "0x6eef92a647e89889075650320e575cb308adb0460c1205d706f5aaaf0969ecd7"
+}

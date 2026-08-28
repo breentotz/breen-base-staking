@@ -1,0 +1,279 @@
+/* ========================================
+   BREEN WEB3 NFT SHOWCASE
+======================================== */
+
+
+/* =========================
+   5 NFT SLOTS
+========================= */
+
+.nft-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 12px;
+
+  width: 100%;
+  margin-top: 18px;
+}
+
+
+/* =========================
+   EACH SLOT
+========================= */
+
+.nft-showcase-item {
+  min-width: 0;
+}
+
+
+/* =========================
+   NFT ART CARD
+========================= */
+
+.nft-showcase-card {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border: 1px solid #26364d;
+  border-radius: 14px;
+
+  background: #080f1b;
+}
+
+
+/* IMPORTANT:
+   image is directly inside the card
+*/
+
+.nft-showcase-card > img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   NFT TYPE
+========================= */
+
+.nft-showcase-type {
+  position: absolute;
+
+  top: 9px;
+  left: 9px;
+
+  z-index: 2;
+
+  padding: 5px 8px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 7px;
+
+  background:
+    rgba(3, 8, 17, 0.82);
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  backdrop-filter: blur(7px);
+}
+
+
+/* =========================
+   DETAILS BOX
+========================= */
+
+.nft-showcase-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  min-height: 48px;
+
+  margin-top: 7px;
+  padding: 8px 10px;
+
+  border: 1px solid #22324b;
+  border-radius: 9px;
+
+  background: #0b1422;
+}
+
+
+/* OWNED NUMBER */
+
+.nft-showcase-details > strong {
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   TOKEN IDs
+========================= */
+
+.nft-showcase-token-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.nft-showcase-token-list span {
+  padding: 3px 5px;
+
+  border: 1px solid #29486f;
+  border-radius: 5px;
+
+  background: #101e32;
+
+  color: #8cb8ff;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   NOT OWNED
+========================= */
+
+.nft-showcase-card.not-owned {
+  opacity: 0.55;
+
+  filter:
+    saturate(0.72)
+    brightness(0.78);
+}
+
+.nft-showcase-card.not-owned::after {
+  content: "NOT OWNED";
+
+  position: absolute;
+
+  right: 8px;
+  bottom: 8px;
+
+  padding: 4px 6px;
+
+  border-radius: 5px;
+
+  background:
+    rgba(3, 8, 17, 0.85);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.25);
+
+  color: #a0aec0;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================
+   RARITY BORDERS
+========================= */
+
+.nft-showcase-card.genesis {
+  border-color:
+    rgba(34, 197, 94, 0.65);
+}
+
+.nft-showcase-card.rarity-common {
+  border-color:
+    rgba(34, 197, 94, 0.55);
+}
+
+.nft-showcase-card.rarity-rare {
+  border-color:
+    rgba(59, 130, 246, 0.65);
+}
+
+.nft-showcase-card.rarity-epic {
+  border-color:
+    rgba(168, 85, 247, 0.68);
+}
+
+.nft-showcase-card.rarity-legendary {
+  border-color:
+    rgba(245, 158, 11, 0.72);
+}
+
+
+/* =========================
+   OWNED GLOW
+========================= */
+
+.nft-showcase-card.owned {
+  box-shadow:
+    0 0 18px
+    rgba(59, 130, 246, 0.08);
+}
+
+.nft-showcase-card.owned.genesis,
+.nft-showcase-card.owned.rarity-common {
+  box-shadow:
+    0 0 18px
+    rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================
+   NFT PAGE COMPACT SPACING
+========================= */
+
+.dashboard-title {
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .nft-showcase-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .nft-showcase-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .nft-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}

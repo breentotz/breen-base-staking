@@ -1,0 +1,1025 @@
+/* =========================================
+   BREEN WEB3 — REPUTATION V2
+========================================= */
+
+.builder-reputation-page {
+  width: 100%;
+}
+
+.reputation-v2-shell {
+  width: 100%;
+  padding: 22px 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 30, 62, 0.98),
+      rgba(8, 16, 32, 0.99)
+    );
+
+  border: 1px solid rgba(74, 122, 255, 0.28);
+  border-radius: 18px;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.2);
+
+  margin-bottom: 18px;
+}
+
+.reputation-v2-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.reputation-v2-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #7398ff;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.reputation-v2-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+}
+
+.reputation-v2-heading p {
+  margin: 6px 0 0;
+
+  color: #8899b8;
+
+  font-size: 13px;
+}
+
+.reputation-v2-rank {
+  text-align: right;
+}
+
+.reputation-v2-rank span {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #7586a7;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.reputation-v2-rank strong {
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+
+/* SCORE ROW */
+
+.reputation-v2-score-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+
+  margin-top: 20px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.reputation-v2-score {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.reputation-v2-score strong {
+  color: #ffffff;
+
+  font-size: 42px;
+  line-height: 1;
+}
+
+.reputation-v2-score span {
+  color: #7d8eaa;
+
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.reputation-v2-progress-area {
+  min-width: 0;
+}
+
+.reputation-v2-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 8px;
+}
+
+.reputation-v2-progress-label span {
+  color: #8293b2;
+  font-size: 11px;
+}
+
+.reputation-v2-progress-label strong {
+  color: #8fa8ff;
+  font-size: 11px;
+}
+
+.reputation-v2-progress {
+  width: 100%;
+  height: 7px;
+
+  background: rgba(255,255,255,0.07);
+
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.reputation-v2-progress-fill {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3478ff,
+      #735fff
+    );
+
+  border-radius: inherit;
+}
+
+.reputation-v2-next {
+  text-align: right;
+}
+
+.reputation-v2-next span {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #7586a7;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.reputation-v2-next strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+.reputation-v2-next small {
+  display: block;
+  margin-top: 4px;
+
+  color: #8a9ab7;
+
+  font-size: 10px;
+}
+
+
+/* METRICS */
+
+.reputation-v2-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.reputation-v2-metric {
+  padding: 13px 14px;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 11px;
+
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.reputation-v2-metric:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(90, 133, 255, 0.25);
+}
+
+.reputation-v2-metric span {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #7e90af;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.reputation-v2-metric strong {
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .reputation-v2-score-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reputation-v2-next,
+  .reputation-v2-rank {
+    text-align: left;
+  }
+
+  .reputation-v2-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* =========================================
+   BUILDER VERIFICATION CENTER
+========================================= */
+
+.reputation-proof-hub {
+  width: 100%;
+  margin-top: 14px;
+  padding: 16px 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 26, 52, 0.96),
+      rgba(8, 16, 32, 0.98)
+    );
+
+  border: 1px solid rgba(75, 121, 255, 0.18);
+  border-radius: 15px;
+
+  box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+.reputation-proof-hub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 12px;
+}
+
+.reputation-proof-hub-header > div > span {
+  display: block;
+  margin-bottom: 3px;
+
+  color: #7297ff;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.reputation-proof-hub-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.reputation-proof-hub-header > small {
+  color: #7183a2;
+  font-size: 10px;
+}
+
+
+/* FOUR PROOF CARDS */
+
+.reputation-proof-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+.reputation-proof-card {
+  min-width: 0;
+  padding: 11px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 10px;
+
+  color: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.reputation-proof-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(68, 108, 255, 0.055);
+
+  border-color:
+    rgba(85, 130, 255, 0.24);
+}
+
+.reputation-proof-card.active {
+  background:
+    rgba(59, 103, 255, 0.08);
+
+  border-color:
+    rgba(83, 128, 255, 0.38);
+
+  box-shadow:
+    0 0 18px rgba(59, 103, 255, 0.06);
+}
+
+
+/* CARD TEXT */
+
+.reputation-proof-card div {
+  min-width: 0;
+}
+
+.reputation-proof-card div > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #7f91af;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.reputation-proof-card div > strong {
+  display: block;
+
+  color: #dce6f8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reputation-proof-card > small {
+  flex-shrink: 0;
+
+  color: #789bff;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* VERIFIED STATE */
+
+.reputation-proof-card strong {
+  transition: color 0.18s ease;
+}
+
+.reputation-proof-card:hover strong {
+  color: #ffffff;
+}
+
+
+/* OPENED LEGACY PROOF PANEL */
+
+.reputation-proof-hub + .reputation-insight,
+.reputation-proof-hub ~ .reputation-insight {
+  border-radius: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .reputation-proof-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .reputation-proof-hub {
+    padding: 14px;
+  }
+
+  .reputation-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reputation-proof-hub-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+/* =========================================
+   REPUTATION — OPEN PROOF PANEL POLISH
+========================================= */
+
+.reputation-proof-hub + .reputation-insight,
+.reputation-proof-hub ~ .reputation-insight {
+  padding: 18px 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 28, 58, 0.96),
+      rgba(11, 18, 38, 0.98)
+    );
+
+  border: 1px solid rgba(89, 112, 255, 0.28);
+  border-radius: 16px;
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.18);
+
+  margin-top: 14px;
+}
+
+
+/* LABEL */
+
+.reputation-proof-hub ~ .reputation-insight > span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #9aaeff;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+
+/* TITLE */
+
+.reputation-proof-hub ~ .reputation-insight h3 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 750;
+}
+
+
+/* DESCRIPTION */
+
+.reputation-proof-hub ~ .reputation-insight p {
+  margin: 6px 0;
+
+  color: #b3bfd7;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* INPUTS */
+
+.reputation-proof-hub ~ .reputation-insight input {
+  width: min(560px, 100%);
+  height: 38px;
+
+  padding: 0 12px;
+
+  background: rgba(7, 13, 28, 0.75);
+
+  border: 1px solid rgba(104, 129, 255, 0.22);
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.reputation-proof-hub ~ .reputation-insight input::placeholder {
+  color: #66748f;
+}
+
+.reputation-proof-hub ~ .reputation-insight input:focus {
+  border-color: rgba(101, 137, 255, 0.55);
+
+  background: rgba(9, 16, 34, 0.9);
+
+  box-shadow:
+    0 0 0 3px rgba(70, 110, 255, 0.08);
+}
+
+
+/* BUTTONS */
+
+.reputation-proof-hub ~ .reputation-insight button {
+  min-height: 38px;
+
+  padding: 0 14px;
+
+  margin-left: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3477ff,
+      #6659ff
+    );
+
+  border: 1px solid rgba(121, 145, 255, 0.25);
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.reputation-proof-hub ~ .reputation-insight button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px rgba(64, 95, 255, 0.18);
+}
+
+.reputation-proof-hub ~ .reputation-insight button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+
+  transform: none;
+}
+
+
+/* CODE / VERIFICATION MESSAGE */
+
+.reputation-proof-hub ~ .reputation-insight code {
+  display: block;
+
+  width: min(620px, 100%);
+
+  margin: 8px 0;
+  padding: 10px 12px;
+
+  background: rgba(6, 11, 24, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+
+  color: #aebfff;
+
+  font-size: 12px;
+
+  word-break: break-word;
+}
+
+
+/* LINKS */
+
+.reputation-proof-hub ~ .reputation-insight a {
+  text-decoration: none;
+}
+
+
+/* NESTED STATUS AREAS */
+
+.reputation-proof-hub ~ .reputation-insight > div {
+  margin-top: 10px;
+}
+
+
+/* AI INSIGHT — KEEP DISTINCT */
+
+.reputation-proof-hub ~ .reputation-insight:last-of-type {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 34, 74, 0.94),
+      rgba(20, 28, 63, 0.96)
+    );
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .reputation-proof-hub ~ .reputation-insight {
+    padding: 16px;
+  }
+
+  .reputation-proof-hub ~ .reputation-insight input {
+    width: 100%;
+  }
+
+  .reputation-proof-hub ~ .reputation-insight button {
+    width: 100%;
+
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+/* =========================================================
+   VERIFIED OPEN SOURCE — PREMIUM PROOF CARD
+========================================================= */
+
+.verified-open-source-card {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 16px;
+  padding: 24px 26px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(78, 117, 255, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(13, 27, 55, 0.98),
+      rgba(10, 20, 42, 0.98)
+    );
+
+  border: 1px solid rgba(86, 126, 255, 0.28);
+  border-radius: 18px;
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* subtle premium glow */
+
+.verified-open-source-card::before {
+  content: "";
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -150px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: rgba(82, 113, 255, 0.13);
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+
+/* VERIFIED OPEN SOURCE label */
+
+.verified-open-source-card > span {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 14px;
+
+  color: #8aa8ff;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+
+/* contribution count */
+
+.verified-open-source-card > h3 {
+  position: relative;
+
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.35px;
+}
+
+
+/* card description */
+
+.verified-open-source-card > p {
+  position: relative;
+
+  margin: 0 0 18px;
+
+  color: #9baed3;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* proof history container */
+
+.open-source-proof-history {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* individual verified PR */
+
+.open-source-proof-history-item {
+  position: relative;
+
+  padding: 15px 17px;
+
+  background: rgba(8, 18, 38, 0.72);
+
+  border: 1px solid rgba(99, 132, 255, 0.18);
+  border-radius: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.open-source-proof-history-item:hover {
+  transform: translateY(-1px);
+
+  background: rgba(13, 27, 54, 0.9);
+
+  border-color: rgba(99, 132, 255, 0.38);
+}
+
+
+/* verified PR title */
+
+.open-source-proof-history-item strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 6px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* contribution description */
+
+.open-source-proof-history-item p {
+  margin: 0;
+
+  color: #91a5cb;
+
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+
+/* green verified accent */
+
+
+/* mobile */
+
+@media (max-width: 700px) {
+
+  .verified-open-source-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .verified-open-source-card > h3 {
+    font-size: 18px;
+  }
+
+  .open-source-proof-history-item strong {
+    flex-wrap: wrap;
+  }
+}
+/* =========================================
+   VERIFIED OPEN SOURCE — V4 PROOF DETAILS
+========================================= */
+
+.open-source-proof-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.open-source-proof-main strong {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.open-source-verified-badge {
+  flex-shrink: 0;
+
+  padding: 4px 9px;
+
+  border: 1px solid rgba(63, 220, 148, 0.24);
+  border-radius: 999px;
+
+  background: rgba(63, 220, 148, 0.08);
+  color: #76efb2;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.open-source-proof-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 11px;
+}
+
+.open-source-proof-meta span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border: 1px solid rgba(111, 139, 255, 0.14);
+  border-radius: 8px;
+
+  background: rgba(17, 31, 61, 0.68);
+  color: #9fb2d8;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.open-source-github-link {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 12px;
+
+  color: #8daaff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.open-source-github-link:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+@media (max-width: 700px) {
+  .open-source-proof-main {
+    align-items: flex-start;
+  }
+
+  .open-source-proof-meta {
+    gap: 6px;
+  }
+}
+/* =========================================
+   GITHUB VERIFIED PROOF REWARD
+========================================= */
+
+.github-proof-reward {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 14px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(76, 224, 153, 0.22);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(32, 89, 74, 0.28),
+      rgba(13, 29, 49, 0.72)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.github-proof-reward::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: #55e5a0;
+}
+
+.github-proof-reward span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #6fe7a9;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.github-proof-reward strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.github-proof-reward p {
+  margin: 6px 0 0;
+
+  color: #91a4c7;
+
+  font-size: 11px;
+  line-height: 1.5;
+}

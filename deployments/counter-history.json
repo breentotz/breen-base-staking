@@ -1,0 +1,11 @@
+[
+  {
+    "contract": "Counter",
+    "address": "0x742F5FF37a501039DbA68eFB867CC07Ef05Bd299",
+    "deployer": "0x06d71EeD44d152D88e6769AFbb7CB3bBBa2471d0",
+    "chainId": "84532",
+    "network": "baseSepolia",
+    "txHash": "0xcf5bb5ffd61dcdee4b4633b39a6125519c9a7348f9533a462d50924b557ee2f4",
+    "timestamp": 1787118106064
+  }
+]

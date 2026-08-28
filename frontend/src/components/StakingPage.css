@@ -1,0 +1,707 @@
+/* =========================================
+   BREEN WEB3 — STAKING DESKTOP DENSITY V1
+========================================= */
+
+.staking-page {
+  width: 100%;
+}
+
+
+/* PAGE HEADING */
+
+.staking-page .dashboard-title {
+  margin-bottom: 16px;
+}
+
+.staking-page .dashboard-title h2 {
+  margin: 0 0 4px;
+}
+
+.staking-page .dashboard-title p {
+  margin: 0;
+}
+
+
+/* FOUR STATS — ONE DESKTOP ROW */
+
+.staking-page .stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+
+/* COMPACT STAT CARDS */
+
+.staking-page .stat-card {
+  min-height: 110px;
+
+  padding: 16px 18px;
+
+  border-radius: 14px;
+}
+
+.staking-page .stat-card span {
+  font-size: 12px;
+}
+
+.staking-page .stat-card h3 {
+  margin: 10px 0 5px;
+
+  font-size: 24px;
+  line-height: 1;
+}
+
+.staking-page .stat-card small {
+  font-size: 11px;
+}
+
+
+/* BRING STAKING PANEL UP */
+
+.staking-page .staking-action-panel {
+  margin-top: 0;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .staking-page .stats-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .staking-page .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   BREEN WEB3 — COMPACT STAKING PANEL V2
+========================================= */
+
+.staking-page .staking-action-panel {
+  width: min(100%, 900px);
+
+  padding: 22px 26px;
+
+  border-radius: 16px;
+}
+
+
+/* Stake BREEN heading */
+
+.staking-page .staking-action-panel h2 {
+  margin: 0 0 4px;
+
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+
+/* Base Sepolia Vault */
+
+.staking-page .staking-step-badge {
+  margin: 0 0 4px;
+
+  font-size: 14px;
+}
+
+
+/* Instruction */
+
+.staking-page .staking-action-panel > p {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* Vault badges */
+
+.staking-page .vault-info-row {
+  margin: 10px 0 14px;
+
+  gap: 8px;
+}
+
+.staking-page .vault-status,
+.staking-page .vault-network {
+  padding: 7px 12px;
+
+  font-size: 12px;
+}
+
+
+/* Available + After Deposit side by side */
+
+.staking-page .staking-mini-card {
+  display: inline-flex;
+  flex-direction: column;
+
+  width: calc(50% - 6px);
+
+  margin: 0 8px 14px 0;
+
+  padding: 10px 12px;
+
+  vertical-align: top;
+
+  border-radius: 10px;
+}
+
+.staking-page .staking-mini-card:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.staking-page .staking-mini-card small {
+  margin-bottom: 3px;
+
+  font-size: 11px;
+}
+
+.staking-page .staking-mini-card strong {
+  font-size: 15px;
+}
+
+
+/* Amount input */
+
+.staking-page .amount-input-wrapper {
+  display: flex;
+  align-items: stretch;
+
+  gap: 8px;
+
+  margin: 0 0 12px;
+}
+
+.staking-page .amount-input-wrapper input {
+  min-height: 44px;
+}
+
+.staking-page .max-button {
+  min-height: 44px;
+
+  padding: 0 18px;
+}
+
+
+/* Actions */
+
+.staking-page .staking-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 0;
+}
+
+.staking-page .staking-actions button {
+  min-height: 44px;
+}
+
+
+/* Transaction feedback stays compact */
+
+.staking-page .transaction-status,
+.staking-page .transaction-message {
+  margin: 8px 0;
+
+  font-size: 12px;
+}
+
+.staking-page .transaction-link {
+  display: inline-block;
+
+  margin: 4px 0 10px;
+}
+
+
+/* Mobile remains comfortable */
+
+@media (max-width: 650px) {
+
+  .staking-page .staking-action-panel {
+    padding: 18px;
+  }
+
+  .staking-page .staking-mini-card {
+    display: flex;
+
+    width: 100%;
+
+    margin-right: 0;
+  }
+
+  .staking-page .staking-actions {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   BREEN WEB3 — STAKING 2-COLUMN PANEL V3
+========================================= */
+
+@media (min-width: 1051px) {
+
+  .staking-page .staking-action-panel {
+    width: 100%;
+    max-width: none;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(280px, 0.8fr)
+      minmax(420px, 1.2fr);
+
+    column-gap: 32px;
+    row-gap: 12px;
+
+    align-items: center;
+
+    padding: 20px 24px;
+  }
+
+
+  .staking-page .staking-panel-info {
+    min-width: 0;
+  }
+
+
+  .staking-page .staking-panel-info h2 {
+    margin: 0 0 4px;
+  }
+
+
+  .staking-page .staking-panel-info p {
+    margin: 6px 0 12px;
+
+    max-width: 430px;
+  }
+
+
+  .staking-page .staking-panel-controls {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+
+  .staking-page .staking-panel-controls .staking-mini-card {
+    width: 100%;
+
+    margin: 0;
+
+    box-sizing: border-box;
+  }
+
+
+  .staking-page .staking-panel-controls .amount-input-wrapper,
+  .staking-page .staking-panel-controls .staking-actions {
+    grid-column: 1 / -1;
+  }
+
+
+  .staking-page .staking-actions {
+    margin: 0;
+  }
+}
+/* =========================================
+   BREEN WEB3 — STAKING PREMIUM COMPACT V4
+========================================= */
+
+@media (min-width: 1051px) {
+
+  .staking-page .staking-action-panel {
+    width: min(100%, 1040px);
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(280px, 0.9fr)
+      minmax(420px, 1.1fr);
+
+    column-gap: 28px;
+
+    align-items: center;
+
+    padding: 18px 22px;
+
+    margin-top: 14px;
+
+    border-radius: 16px;
+  }
+
+
+  .staking-page .staking-panel-info {
+    min-width: 0;
+  }
+
+
+  .staking-page .staking-panel-info h2 {
+    margin: 0 0 3px;
+
+    font-size: 21px;
+  }
+
+
+  .staking-page .staking-step-badge {
+    margin-bottom: 5px;
+
+    font-size: 12px;
+  }
+
+
+  .staking-page .staking-panel-info p {
+    max-width: 390px;
+
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+
+  .staking-page .vault-info-row {
+    margin: 8px 0 0;
+  }
+
+
+  .staking-page .vault-status,
+  .staking-page .vault-network {
+    padding: 6px 10px;
+
+    font-size: 11px;
+  }
+
+
+  /* RIGHT CONTROL AREA */
+
+  .staking-page .staking-panel-controls {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px 12px;
+  }
+
+
+  .staking-page
+  .staking-panel-controls
+  .staking-mini-card {
+    width: 100%;
+
+    min-height: 58px;
+
+    margin: 0;
+
+    padding: 9px 11px;
+
+    box-sizing: border-box;
+  }
+
+
+  .staking-page .staking-mini-card small {
+    font-size: 10px;
+  }
+
+
+  .staking-page .staking-mini-card strong {
+    font-size: 14px;
+  }
+
+
+  /* INPUT */
+
+  .staking-page .amount-input-wrapper {
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr) auto;
+
+    gap: 8px;
+
+    margin: 1px 0 0;
+  }
+
+
+  .staking-page .amount-input-wrapper input {
+    min-height: 42px;
+
+    padding: 0 14px;
+  }
+
+
+  .staking-page .max-button {
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+  }
+
+
+  /* BUTTONS */
+
+  .staking-page .staking-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 1px;
+  }
+
+
+  .staking-page .staking-actions button {
+    flex: 0 0 auto;
+
+    min-width: 118px;
+    min-height: 40px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+  }
+
+
+  /* Keep primary actions premium, not huge */
+
+  .staking-page .staking-actions .primary-button {
+    box-shadow:
+      0 8px 20px rgba(37, 99, 235, 0.12);
+  }
+
+}
+/* =========================================
+   BREEN WEB3 — STAKING DENSITY FIX V5
+========================================= */
+
+@media (min-width: 1051px) {
+
+  /* Pull page upward */
+  .staking-page {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .staking-page .dashboard-title {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+
+  /* Make stats shorter and denser */
+  .staking-page .stats-grid {
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .staking-page .stat-card {
+    min-height: 92px !important;
+    padding: 13px 16px !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .staking-page .stat-card span {
+    margin-bottom: 5px;
+  }
+
+  .staking-page .stat-card h3 {
+    margin: 2px 0 4px !important;
+    font-size: 22px;
+  }
+
+
+  /* Main staking panel */
+  .staking-page .staking-action-panel {
+    width: min(100%, 980px) !important;
+
+    padding: 16px 18px !important;
+    margin-top: 0 !important;
+
+    grid-template-columns:
+      minmax(260px, 0.85fr)
+      minmax(400px, 1.15fr) !important;
+
+    column-gap: 22px !important;
+  }
+
+
+  /* Left side */
+  .staking-page .staking-panel-info h2 {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .staking-page .staking-panel-info p {
+    margin: 4px 0 8px !important;
+  }
+
+  .staking-page .vault-info-row {
+    margin: 6px 0 0 !important;
+  }
+
+
+  /* Right side */
+  .staking-page .staking-panel-controls {
+    gap: 8px !important;
+  }
+
+  .staking-page .staking-mini-card {
+    min-height: 50px !important;
+    padding: 7px 10px !important;
+  }
+
+  .staking-page .amount-input-wrapper {
+    margin-top: 0 !important;
+  }
+
+  .staking-page .staking-actions {
+    margin-top: 0 !important;
+  }
+}
+/* =========================================
+   STAKING — FLOATING TRANSACTION STATUS
+========================================= */
+
+@media (min-width: 1051px) {
+
+  .staking-page .staking-action-panel {
+    position: relative;
+  }
+
+  .staking-page .staking-transaction-overlay {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 430px;
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    background:
+      rgba(8, 15, 28, 0.96);
+
+    border:
+      1px solid rgba(96, 165, 250, 0.18);
+
+    box-shadow:
+      0 16px 35px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(14px);
+
+    z-index: 20;
+  }
+
+
+  .staking-page
+  .staking-transaction-overlay
+  .transaction-timeline {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 6px;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+  }
+
+
+  .staking-page
+  .staking-transaction-overlay
+  .timeline-step {
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
+    gap: 3px;
+
+    flex: 1;
+
+    min-width: 0;
+  }
+
+
+  .staking-page
+  .staking-transaction-overlay
+  .timeline-step span {
+    width: 24px;
+    height: 24px;
+
+    font-size: 10px;
+  }
+
+
+  .staking-page
+  .staking-transaction-overlay
+  .timeline-step p {
+    margin: 0;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+  }
+
+
+  .staking-page
+  .staking-transaction-overlay
+  .transaction-status,
+  .staking-page
+  .staking-transaction-overlay
+  .transaction-message {
+    margin: 7px 0 0;
+
+    font-size: 10px;
+  }
+
+
+  .staking-page
+  .staking-transaction-overlay
+  .transaction-link {
+    display: inline-block;
+
+    margin: 6px 0 0;
+
+    font-size: 10px;
+  }
+}

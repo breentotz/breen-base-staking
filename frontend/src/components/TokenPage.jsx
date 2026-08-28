@@ -1,12 +1,42 @@
 import { useEffect, useState } from "react";
-import { formatEther } from "ethers";
+import {
+  concat,
+  formatEther,
+  parseEther,
+} from "ethers";
 import { getContracts } from "../utils/contract";
+import {
+  BUILDER_DATA_SUFFIX,
+} from "../utils/builderCode";
+import {
+  addActivity,
+} from "../utils/activity";
+
 
 function TokenPage({ wallet }) {
   const [balance, setBalance] = useState("0");
   const [tokenName, setTokenName] = useState("Breen Token");
   const [symbol, setSymbol] = useState("BREEN");
   const [loading, setLoading] = useState(true);
+  const [recipient, setRecipient] = useState("");
+  const [amount, setAmount] = useState("");
+  const [sending, setSending] = useState(false);
+  const [message, setMessage] = useState("");
+  const [lastTxHash, setLastTxHash] =
+  useState("");
+
+useEffect(() => {
+  setMessage("");
+  setRecipient("");
+  setAmount("");
+}, [wallet]);
+
+
+useEffect(() => {
+  setLastTxHash("");
+  setMessage("");
+}, [wallet]);
+
 
   useEffect(() => {
     if (!wallet) {
@@ -49,17 +79,101 @@ function TokenPage({ wallet }) {
     loadTokenData();
   }, [wallet]);
 
-  if (!wallet) {
-    return (
-      <div className="page-card">
-        <h2>🪙 BREEN Token</h2>
+  async function sendBreen() {
 
-        <p>
-          Connect your wallet to view your BREEN balance.
-        </p>
-      </div>
-    );
+if (!wallet) {
+  setMessage(
+    "Connect your wallet to send BREEN."
+  );
+  return;
+}
+
+  try {
+    if (!recipient) {
+      setMessage("Enter a recipient wallet address.");
+      return;
+    }
+
+    if (!amount || Number(amount) <= 0) {
+      setMessage("Enter a valid BREEN amount.");
+      return;
+    }
+
+    if (Number(amount) > Number(balance)) {
+      setMessage("Insufficient BREEN balance.");
+      return;
+    }
+
+    setSending(true);
+    setMessage("Waiting for MetaMask confirmation...");
+
+    const { token } = await getContracts();
+
+    const txRequest =
+  await token.transfer.populateTransaction(
+    recipient,
+    parseEther(amount)
+  );
+
+txRequest.data = concat([
+  txRequest.data,
+  BUILDER_DATA_SUFFIX,
+]);
+
+const tx =
+  await token.runner.sendTransaction(
+    txRequest
+  );
+
+    setMessage("Transaction pending on Base Sepolia...");
+
+    const receipt = await tx.wait();
+
+const txHash =
+  receipt.hash || tx.hash;
+
+  addActivity(
+  "token",
+  "BREEN Sent",
+  `${amount} BREEN sent to ${recipient}.`,
+  0,
+  txHash,
+  wallet
+);
+
+setMessage(
+  `✅ ${amount} BREEN sent successfully.`
+);
+
+setLastTxHash(txHash);
+
+    const newBalance = await token.balanceOf(wallet);
+
+    setBalance(formatEther(newBalance));
+
+    setRecipient("");
+    setAmount("");
+  } catch (err) {
+    console.error("BREEN transfer error:", err);
+
+    const rejected =
+      err.code === 4001 ||
+      err.code === "ACTION_REJECTED";
+
+    if (rejected) {
+      setMessage("Transaction rejected in MetaMask.");
+    } else {
+      setMessage(
+        err.shortMessage ||
+        err.message ||
+        "Unable to send BREEN."
+      );
+    }
+  } finally {
+    setSending(false);
   }
+}
+
 
   return (
     <div className="dashboard">
@@ -77,6 +191,69 @@ function TokenPage({ wallet }) {
         </p>
       ) : (
         <div className="token-page-card">
+
+<div className="token-transfer">
+  <h2>Send BREEN</h2>
+
+  <label>
+    Recipient Address
+  </label>
+
+  <input
+    type="text"
+    placeholder="0x..."
+    value={recipient}
+    onChange={(event) =>
+      setRecipient(event.target.value)
+    }
+    disabled={!wallet || sending}
+  />
+
+  <label>
+    Amount
+  </label>
+
+  <input
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="Enter BREEN amount"
+    value={amount}
+    onChange={(event) =>
+      setAmount(event.target.value)
+    }
+    disabled={!wallet || sending}
+  />
+
+  <button
+  type="button"
+  onClick={sendBreen}
+  disabled={!wallet || sending}
+>
+  {!wallet
+    ? "Connect Wallet to Send"
+    : sending
+      ? "Sending..."
+      : "Send BREEN"}
+</button>
+
+  {message && (
+    <p className="token-message">
+      {message}
+    </p>
+  )}
+  {lastTxHash && (
+  <a
+    href={`https://sepolia.basescan.org/tx/${lastTxHash}`}
+    target="_blank"
+    rel="noreferrer"
+    className="token-tx-link"
+  >
+    View on BaseScan ↗
+  </a>
+)}
+</div>
+
           <div>
             <span className="token-label">
               Token Name
@@ -94,24 +271,46 @@ function TokenPage({ wallet }) {
           </div>
 
           <div>
+  <span className="token-label">
+    Network
+  </span>
+
+  <h2>Base Sepolia</h2>
+</div>
+
+
+
+          <div>
             <span className="token-label">
               Your Balance
             </span>
 
             <h1>
-              {balance} {symbol}
-            </h1>
+  {wallet
+    ? `${balance} ${symbol}`
+    : `— ${symbol}`}
+</h1>
           </div>
 
           <div className="token-wallet">
-            <span>Connected Wallet</span>
+  <span>
+    {wallet
+      ? "Connected Wallet"
+      : "Wallet Status"}
+  </span>
 
-            <p>{wallet}</p>
-          </div>
+  <p>
+    {wallet
+      ? wallet
+      : "Not Connected"}
+  </p>
+</div>
         </div>
       )}
     </div>
   );
 }
+
+
 
 export default TokenPage;
