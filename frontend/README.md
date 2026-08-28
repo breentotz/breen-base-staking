@@ -23,3 +23,11 @@ Verified merged GitHub contributions can be used as proof of real open-source Bu
 BREEN Web3 is testing verified GitHub contribution proofs as part of its Builder Reputation system.
 
 Merged pull requests can be linked to a verified builder identity and recorded as open-source reputation.
+
+### Verified Contribution Flow
+
+BREEN Web3 verifies open-source Builder contributions through GitHub.
+
+A contribution must come from the Builder's verified GitHub identity and the pull request must be merged before it becomes eligible for reputation.
+
+Each verified pull request can only be claimed once, helping prevent duplicate reputation rewards.
